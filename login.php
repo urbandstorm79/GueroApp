@@ -28,6 +28,7 @@
 		<label>Password</label>
 		<button class="btn btn-primary btn-block">LogIn</button>
 		<p>Create an account, click <a href="signUp.php">here</a></p>
+        <a href="dashboard.php">ir a dashboard</a>
 	</form>
 </div>
 </body>
