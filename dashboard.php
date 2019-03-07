@@ -27,6 +27,10 @@
 	<!--<div class="nav"><a href="#" class="menu-btn"><i class="fas fa-bars"></i></a>-->
 	<!--<h2>GüeroApp</h2>-->
 	<!--</div>-->
+    <div class="user">
+        <span class="user-img"><img src="img/Avatar3.0.png" alt="user img"></span>
+        <p>Welcome <a href="#">Usuario124</a></p>
+    </div>
 	<ul>
 		<li><a href="#"><i class="fas fa-home"></i> Home</a></li>
 		<li><a href="#"><i class="far fa-plus-square"></i> New order</a></li>
