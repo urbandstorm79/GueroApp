@@ -170,4 +170,12 @@ a{
     width: 10%;
 }
 
+.mensaje{
+    text-align: center;
+    background: rgb(241, 214, 103);
+    border-radius: 5px;
+    width: 500px;
+    margin: auto;
+}
+
 

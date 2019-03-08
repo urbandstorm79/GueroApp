@@ -1,3 +1,35 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user-id'])){
+    header('Location: dashboard.php');
+}
+require 'connection.php';
+if (!empty($_POST['user']) && !empty($_POST['password'])){
+    $query= $conn->prepare('SELECT idUsuarios,nombreUsuario,contra FROM usuarios WHERE usuarios.nombreUsuario = :userF');
+    $query->bindParam(':userF',$_POST['user']);
+    $query->execute();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+
+    $mensaje= '';
+    if ($_POST['user']== $result['nombreUsuario']){
+        if ( $_POST['password'] == $result['contra']){
+			$_SESSION['user-id'] = $result['idUsuarios'];
+			echo 'Todo va relativamente bien';
+			header('Location: dashboard.php');
+        }else{
+			$titulo = 'Tenemos un problema';
+			$mensaje= 'El usuario o la contraseña no coinciden';
+        }
+
+    }else{
+		$titulo = 'Lo sentimos';
+		$mensaje= 'Este usuario no esta registrado';
+    }
+}
+
+?>
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -15,18 +47,21 @@
 		<h2>GüeroApp</h2>
 	</nav>
 </header>
+<?php if (!empty($mensaje)){
+    echo '<h3 class="mensaje">'.$mensaje.'</h3>';
+}?>
 <div class="formulario">
 	<h2>SignIn</h2>
-	<form action="">
+	<form action="login.php" method="POST">
 
 		<div class="row">
-			<input type="text" name="user" placeholder="Username">
+			<input type="text" name="user" placeholder="Username" required>
 			<label for="user">Username</label>
 		</div>
 
-		<input type="password" name="password" placeholder="Password" >
+		<input type="password" name="password" placeholder="Password" required>
 		<label>Password</label>
-		<button class="btn btn-primary btn-block">LogIn</button>
+		<button type="submit" class="btn btn-primary btn-block">LogIn</button>
 		<p>Create an account, click <a href="signUp.php">here</a></p>
         <a href="dashboard.php">ir a dashboard</a>
 	</form>

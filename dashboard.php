@@ -37,7 +37,7 @@
 		<li><a href="#"><i class="fas fa-book-open"></i> Menu</a></li>
 		<li><a href="#"><i class="far fa-clock"></i> History</a></li>
 		<li><a href="#"><i class="fas fa-users-cog"></i> User settings</a></li>
-		<li><a href="login.php"><i class="fas fa-door-open"></i> LogOut</a></li>
+		<li><a href="logOut.php"><i class="fas fa-door-open"></i> LogOut</a></li>
 	</ul>
 </nav>
 
