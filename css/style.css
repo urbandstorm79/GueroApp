@@ -154,8 +154,10 @@ a{
 
 }
 .user-img img{
-    width: 100px;
-    border-radius: 50px;
+    width: 200px;
+    border-radius: 100px;
+    border: solid 5px #fff;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.4);
 }
 
 .wdt-100{ width: 100%;}
