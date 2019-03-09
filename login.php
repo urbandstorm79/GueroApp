@@ -55,14 +55,16 @@ if (!empty($_POST['user']) && !empty($_POST['password'])){
 	<form action="login.php" method="POST">
 
 		<div class="row">
-			<input type="text" name="user" placeholder="Username" required>
-			<label for="user">Username</label>
+			<input type="text" name="user" placeholder="Usuario" required>
+			<label for="user">Usuario</label>
 		</div>
 
-		<input type="password" name="password" placeholder="Password" required>
-		<label>Password</label>
+		<input type="password" name="password" placeholder="Contraseña" required>
+		<label>Contraseña</label>
 		<button type="submit" class="btn btn-primary btn-block">LogIn</button>
-		<p>Create an account, click <a href="signUp.php">here</a></p>
+		<p>Crea una cuenta dando clic <a href="signUp.php">aquí</a></p>
+
+		<!-- esta etiquta es solo temporal, despues la quito, es para evitar el logueo -->
         <a href="dashboard.php">ir a dashboard</a>
 	</form>
 </div>

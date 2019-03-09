@@ -36,37 +36,40 @@ if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userN
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 	<link rel="stylesheet" href="css/style.css">
-	<title>Sign Up</title>
+	<title>Registrar usuario</title>
 </head>
 <body>
 
 <nav class="nav">
 	<div class="    ">
 		<h2 class="">GüeroApp</h2>
-		<?php if (!empty($mensaje)){
-			echo '<p>'.$mensaje.'</p>';
-		} else{
-			echo 'Mal';
-		}?>
 	</div>
 </nav>
+
+<?php if (!empty($mensaje)){
+    echo '<h3 class="mensaje">'.$mensaje.'</h3>';
+}?>
 
 <div class="formulario">
 	<h2>Create an Account</h2>
 	<form action="signUp.php" method="POST">
-		<input type="text" name="name" placeholder="Name" >
-		<label for="name">Name</label>
-		<input type="text" name="lastName" placeholder="Last name" >
-		<label>Last name</label>
-		<input type="text" name="userName" placeholder="User name" >
-		<label>User Name</label>
-		<input type="password" name="password" placeholder="Password">
-		<label>Password</label>
-		<input type="tel" name="tel" placeholder="Phone number">
-		<label>Phone number</label>
-		<button type="submit" class="btn btn-primary btn-block">SignUp</button>
+		<input type="text" name="name" placeholder="Nombre" >
+		<label for="name">Nombre</label>
+		<input type="text" name="lastName" placeholder="Apellido" >
+		<label>Apellido</label>
+		<input type="date" name="date">
+		<label for="date">Fecha de nacimiento</label> <!-- falta agregar -->
+		<input type="email" name="mail" placeholder="Correo eléctronico"> <!-- falta agregar -->
+		<label for="mail">Correo eléctronico</label>
+		<input type="text" name="userName" placeholder="Nombre de usuario" >
+		<label>Nombre de usuario</label>
+		<input type="password" name="password" placeholder="Contraseña">
+		<label>Contraseña</label>
+		<input type="tel" name="tel" placeholder="Numero de teléfono">
+		<label>Numero de teléfono</label>
+		<button type="submit" class="btn btn-primary btn-block">Registrar</button>
 	</form>
-	<p>You already have an account? LogIn <a href="login.php">here</a></p>
+	<p>Ya tienes una cuenta? Inicia sesión <a href="login.php">aquí</a></p>
 </div>
 </body>
 </html>
