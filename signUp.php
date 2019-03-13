@@ -2,13 +2,15 @@
 require 'connection.php';
 $mensaje ="";
 
-if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userName']) && !empty($_POST['password'])){
-	$query = "INSERT INTO usuarios (nombre, apellido, nombreUsuario, contra, telefono) VALUES (:nombre,:lastN, :usuario, :pass, :tel)";
+if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userName']) && !empty($_POST['password']) && !empty($_POST['mail']) && !empty($_POST['date'])){
+	$query = "INSERT INTO usuarios (nombre, apellido, correo, nombreUsuario, contra, fecha, telefono) VALUES (:nombre,:lastN,:email, :usuario, :pass, :datee, :tel)";
 	$state = $conn->prepare($query);
 	$state->bindParam(':nombre', $_POST['name']);
 	$state->bindParam(':lastN',$_POST['lastName']);
+	$state->bindParam(':email', $_POST['mail']);
 	$state->bindParam(':usuario',$_POST['userName']);
 	$state->bindParam(':pass',$_POST['password']);
+		$state->bindParam(':datee',$_POST['date']);
 	$state->bindParam(':tel',$_POST['tel']);
 
 	if ($state->execute()){
@@ -51,7 +53,7 @@ if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userN
 }?>
 
 <div class="formulario">
-	<h2>Create an Account</h2>
+	<h2>Crea una cuenta</h2>
 
         <form action="signUp.php" method="POST">
             <div class="formulario-flex">

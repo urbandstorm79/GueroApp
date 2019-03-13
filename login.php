@@ -6,13 +6,13 @@ if (isset($_SESSION['user-id'])){
 }
 require 'connection.php';
 if (!empty($_POST['user']) && !empty($_POST['password'])){
-    $query= $conn->prepare('SELECT idUsuarios,nombreUsuario,contra FROM usuarios WHERE usuarios.nombreUsuario = :userF');
+    $query= $conn->prepare('SELECT idUsuarios,nombreUsuario,correo,contra FROM usuarios WHERE usuarios.nombreUsuario = :userF OR usuarios.correo= :userF');
     $query->bindParam(':userF',$_POST['user']);
     $query->execute();
     $result = $query->fetch(PDO::FETCH_ASSOC);
 
     $mensaje= '';
-    if ($_POST['user']== $result['nombreUsuario']){
+    if ($_POST['user']== $result['nombreUsuario'] || $_POST['user']== $result['correo']){
         if ( $_POST['password'] == $result['contra']){
 			$_SESSION['user-id'] = $result['idUsuarios'];
 			echo 'Todo va relativamente bien';
@@ -51,12 +51,12 @@ if (!empty($_POST['user']) && !empty($_POST['password'])){
     echo '<h3 class="mensaje">'.$mensaje.'</h3>';
 }?>
 <div class="formulario">
-	<h2>SignIn</h2>
+	<h2>Iniciar sesión</h2>
 	<form action="login.php" method="POST">
 
 		<div class="row">
-			<input type="text" name="user" placeholder="Usuario" required>
-			<label for="user">Usuario</label>
+			<input type="text" name="user" placeholder="Usuario o correo" required>
+			<label for="user">Usuario o correo</label>
 		</div>
 
 		<input type="password" name="password" placeholder="Contraseña" required>
