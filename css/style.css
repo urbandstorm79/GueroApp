@@ -116,6 +116,18 @@ a{
 .formulario-flex div{
     padding: 2px;
 }
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -10px;
+    both: 0;
+    bottom: 0;
+    left: 0;
+}
+.separador{
+    border-top: 1px solid rgba(0,0,0,0.3);
+}
 .btn{
     border-radius: 4px; font-size: 16px; background-color: #fafafafa;
     border: #fafafa;
@@ -157,6 +169,7 @@ a{
 }
 .user-img{
     margin: 5px 10px;
+    font-size: 100px;
 
 }
 .user-img img{

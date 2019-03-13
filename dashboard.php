@@ -28,7 +28,7 @@
 	<!--<h2>GüeroApp</h2>-->
 	<!--</div>-->
     <div class="user">
-        <span class="user-img"><img src="img/Avatar3.0.png" alt="user img"></span>
+        <span class="user-img"><i class="fas fa-user-circle"></i></span>
         <p>Welcome <a href="#">Usuario124</a></p>
     </div>
 	<ul>
@@ -39,6 +39,10 @@
 		<li><a href="#"><i class="fas fa-users-cog"></i> User settings</a></li>
 		<li><a href="logOut.php"><i class="fas fa-door-open"></i> LogOut</a></li>
 	</ul>
+
+    <footer class="footer">
+        <p class="separador">Todos los derechos reservados a GueroApp 2019 <i class="far fa-copyright"></i></p>
+    </footer>
 </nav>
 
 </body>
