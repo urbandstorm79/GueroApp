@@ -52,23 +52,40 @@ if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userN
 
 <div class="formulario">
 	<h2>Create an Account</h2>
-	<form action="signUp.php" method="POST">
-		<input type="text" name="name" placeholder="Nombre" >
-		<label for="name">Nombre</label>
-		<input type="text" name="lastName" placeholder="Apellido" >
-		<label>Apellido</label>
-		<input type="date" name="date">
-		<label for="date">Fecha de nacimiento</label> <!-- falta agregar -->
-		<input type="email" name="mail" placeholder="Correo eléctronico"> <!-- falta agregar -->
-		<label for="mail">Correo eléctronico</label>
-		<input type="text" name="userName" placeholder="Nombre de usuario" >
-		<label>Nombre de usuario</label>
-		<input type="password" name="password" placeholder="Contraseña">
-		<label>Contraseña</label>
-		<input type="tel" name="tel" placeholder="Numero de teléfono">
-		<label>Numero de teléfono</label>
-		<button type="submit" class="btn btn-primary btn-block">Registrar</button>
-	</form>
+
+        <form action="signUp.php" method="POST">
+            <div class="formulario-flex">
+            <div class="wdt-50">
+                <input type="text" name="name" placeholder="Nombre" >
+                <label for="name">Nombre</label>
+            </div>
+            <div class="wdt-50">
+                <input type="text" name="lastName" placeholder="Apellido" >
+                <label>Apellido</label>
+            </div>
+            <div class="wdt-50">
+                <input type="email" name="mail" placeholder="Correo eléctronico"> <!-- falta agregar -->
+                <label for="mail">Correo eléctronico</label>
+            </div>
+            <div class="wdt-50">
+                <input type="text" name="userName" placeholder="Nombre de usuario" >
+                <label>Nombre de usuario</label>
+            </div>
+            <div class="wdt-60">
+                <input type="password" name="password" placeholder="Contraseña">
+                <label>Contraseña</label>
+            </div>
+                <div class="wdt-40">
+                    <input type="date" name="date" placeholder="Fecha de nacimiento">
+                    <label for="date">Fecha de nacimiento</label> <!-- falta agregar -->
+                </div>
+            <div class="wdt-100">
+                <input type="tel" name="tel" placeholder="Numero de teléfono">
+                <label>Numero de teléfono</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+            </div>
+        </form>
 	<p>Ya tienes una cuenta? Inicia sesión <a href="login.php">aquí</a></p>
 </div>
 </body>

@@ -90,9 +90,11 @@ a{
 .formulario input{
     width: 100%;
     padding: 10px;
+    height: 40px;
     border-radius: 3px;
     border:solid 1px rgba(0,0,0,0.1);
     margin-bottom: 10px;
+    font-family: "Open Sans", sans-serif;
 }
 .formulario input:focus{
     padding-bottom: 20px;
@@ -106,9 +108,13 @@ a{
 .formulario label{ display: none; font-size: 14px;
 }
 .formulario-flex{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+.formulario-flex div{
+    padding: 2px;
 }
 .btn{
     border-radius: 4px; font-size: 16px; background-color: #fafafafa;
@@ -162,7 +168,12 @@ a{
 
 .wdt-100{ width: 100%;}
 .wdt-90{width: 90%;}
+.wdt-60{
+    width: 60%;}
 .wdt-50{width: 50%;}
+.wdt-40{
+    width: 40%;
+}
 .wdt-25{
     width: 25%;}
 .wdt-20{width: 20%;}
