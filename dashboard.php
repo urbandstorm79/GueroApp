@@ -29,7 +29,7 @@
 	<!--</div>-->
     <div class="user">
         <span class="user-img"><i class="fas fa-user-circle"></i></span>
-        <p>Welcome <a href="#">Usuario124</a></p>
+        <p>Welcome <a href="#">UsuariochidoUno</a></p>
     </div>
 	<ul>
 		<li><a href="#"><i class="fas fa-home"></i> Home</a></li>
