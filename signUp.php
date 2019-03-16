@@ -1,5 +1,5 @@
 <?php
-require 'connection.php';
+require 'controller/connection.php';
 $mensaje ="";
 
 if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userName']) && !empty($_POST['password']) && !empty($_POST['mail']) && !empty($_POST['date'])){

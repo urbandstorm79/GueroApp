@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['user-id'])){
     header('Location: dashboard.php');
 }
-require 'connection.php';
+require 'controller/connection.php';
 if (!empty($_POST['user']) && !empty($_POST['password'])){
     $query= $conn->prepare('SELECT idUsuarios,nombreUsuario,correo,contra FROM usuarios WHERE usuarios.nombreUsuario = :userF OR usuarios.correo= :userF');
     $query->bindParam(':userF',$_POST['user']);

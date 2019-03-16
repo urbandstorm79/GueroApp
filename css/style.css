@@ -65,7 +65,7 @@ a{
     list-style: none;
     padding: 20px;
     margin-left: -50px;
-    transition-duration: .9s;
+    transition-duration:.5s;
     transition-timing-function: linear;
     transition-property: border-radius, background, padding;
 }
