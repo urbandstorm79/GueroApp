@@ -60,9 +60,9 @@ $records = $conn->prepare('SELECT nombreUsuario FROM usuarios WHERE idUsuarios =
 	<!--</div>-->
     <div class="user">
         <span class="user-img"><i class="fas fa-user-circle"></i></span>
-        <p>Welcome <?php if (!empty($user)):
+        <p class="wdt-100">Welcome </p><?php if (!empty($user)):
  	?>
-	<?php echo $user['nombreUsuario'].'</p>' ?> ; <!-- concatenar -->
+	<?php echo '<a>' $user['nombreUsuario'].'</a>' ?> <!-- concatenar -->
 
 	
 
