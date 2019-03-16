@@ -64,8 +64,8 @@ if (!empty($_POST['user']) && !empty($_POST['password'])){
 		<button type="submit" class="btn btn-primary btn-block">LogIn</button>
 		<p>Crea una cuenta dando clic <a href="signUp.php">aquí</a></p>
 
-		<!-- esta etiquta es solo temporal, despues la quito, es para evitar el logueo -->
-        <a href="dashboard.php">ir a dashboard</a>
+		<!-- esta etiqueta es solo temporal, despues la quito, es para evitar el logueo -->
+        <!-- <a href="dashboard.php">ir a dashboard</a> -->
 	</form>
 </div>
 </body>
