@@ -59,14 +59,11 @@ $records = $conn->prepare('SELECT nombreUsuario FROM usuarios WHERE idUsuarios =
 	<!--<h2>GüeroApp</h2>-->
 	<!--</div>-->
     <div class="user">
-        <span class="user-img"><i class="fas fa-user-circle"></i></span>
-        <p class="wdt-100">Welcome </p><?php if (!empty($user)):
- 	?>
-	<?php echo '<a>' $user['nombreUsuario'].'</a>' ?> <!-- concatenar -->
-
-	
-
-<?php endif ?>
+        <div class="user-img"><i class="fas fa-user-circle"></i></div>
+        <?php if (!empty($user)){
+		echo '<p> Binvenido '.$user['nombreUsuario'].'</p>';//concatenar con .
+		}
+		?> 
     </div>
 	<ul>
 		<li><a href="#"><i class="fas fa-home"></i> Home</a></li>
