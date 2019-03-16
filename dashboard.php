@@ -17,16 +17,12 @@ $records = $conn->prepare('SELECT idUsuarios,nombreUsuario FROM usuarios WHERE i
 
 	if (($results)> 0) {
 		$user = $results;
-		echo $results['nombreUsuario'];
+		echo $user['nombreUsuario'];
 	}
 
 } 
 	
 	
-
-			
-
-
 
 
 
