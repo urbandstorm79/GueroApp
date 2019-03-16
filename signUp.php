@@ -16,6 +16,7 @@ if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userN
 	if ($state->execute()){
 		$titulo= 'Usuario Creado';
 		$mensaje= 'Ya puedes iniciar sesion';
+        header('Location: login.php');
 		// echo $mensaje;
 	}else{
 		$titulo= 'Error';
