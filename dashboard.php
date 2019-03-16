@@ -1,25 +1,32 @@
 <?php
+
 session_start();
 
 
 require 'connection.php';
 
-if (isset($_SESSION['user-id'])) {
-	
-	$records = $conn->prepare('SELECT idUsuarios,nombreUsuario FROM usuarios WHERE idUsuario = :id');
+if (isset($_SESSION['user-id'])){
+
+
+$records = $conn->prepare('SELECT idUsuarios,nombreUsuario FROM usuarios WHERE idUsuario = :id');
 	$records->bindParam(':id',$_SESSION['user-id']);
 	$records->execute();
 	$results = $records->fetch(PDO::FETCH_ASSOC);
 
 	$user = null;
 
-	if ($results)> 0) {
+	if (($results)> 0) {
 		$user = $results;
 		echo $results['nombreUsuario'];
 	}
 
+} 
+	
+	
 
-}
+			
+
+
 
 
 
