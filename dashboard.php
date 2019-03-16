@@ -13,9 +13,9 @@ if (isset($_SESSION['user-id'])) {
 
 	$user = null;
 
-	if (count($results)> 0) {
+	if ($results)> 0) {
 		$user = $results;
-		echo $user['nombreUsuario'];
+		echo $results['nombreUsuario'];
 	}
 
 
