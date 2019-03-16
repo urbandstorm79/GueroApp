@@ -70,11 +70,11 @@ $records = $conn->prepare('SELECT nombreUsuario FROM usuarios WHERE idUsuarios =
     </div>
 	<ul>
 		<li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-		<li><a href="#"><i class="far fa-plus-square"></i> New order</a></li>
-		<li><a href="#"><i class="fas fa-book-open"></i> Menu</a></li>
-		<li><a href="#"><i class="far fa-clock"></i> History</a></li>
-		<li><a href="#"><i class="fas fa-users-cog"></i> User settings</a></li>
-		<li><a href="logOut.php"><i class="fas fa-door-open"></i> LogOut</a></li>
+		<li><a href="#"><i class="far fa-plus-square"></i> Nueva orden</a></li>
+		<li><a href="#"><i class="fas fa-book-open"></i> Menú</a></li>
+		<li><a href="#"><i class="far fa-clock"></i> Historial</a></li>
+		<li><a href="#"><i class="fas fa-users-cog"></i> Configuración de usuario</a></li>
+		<li><a href="logOut.php"><i class="fas fa-door-open"></i> Cerrar sesión</a></li>
 	</ul>
 
     <footer class="footer">
