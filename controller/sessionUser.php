@@ -22,8 +22,8 @@ if (isset($_SESSION['user-id'])){
 
 	if (!empty($results)) {
 		$user = $results;
-		echo $user['nombreUsuario'];
-		echo 'Todo bien';
+//		echo $user['nombreUsuario'];
+//		echo 'Todo bien';
 	}
 
 }else{

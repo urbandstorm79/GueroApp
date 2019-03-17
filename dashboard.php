@@ -18,5 +18,11 @@ require 'controller/sessionUser.php'
 <?php  require 'layouts/menu-nav.php'?>
 <?php require 'layouts/side-nav.php'?>
 
+
+<div class="contenedor">
+    <div class="mensaje"><h2 class="">Hola</h2></div>
+</div>
+
+<?php  require 'layouts/footer.php'?>
 </body>
 </html>

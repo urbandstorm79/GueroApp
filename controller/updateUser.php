@@ -21,6 +21,7 @@ if (isset($_SESSION['user-id'])){
 		$stmt->bindParam(':id', $_SESSION['user-id']);
 		if ($stmt->execute()){
 			$msj= 'Tus datos se han actualizado satisfactoriamente!!';
+			require 'userDataPrint.php';
 		}else{
 			$msj='Ha ocurrrido un error';
 		}

@@ -45,6 +45,12 @@ a{
 .close:hover{
     background: #FFD73D;
 }
+.contenedor{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 .side-nav{
     width: 90%;
     max-width: 250px;
@@ -117,13 +123,19 @@ a{
     padding: 2px;
 }
 .footer {
+    background: #32353D;
+    width: 100%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: -10px;
-    both: 0;
+    flex-direction: column;
+    clear: both;
     bottom: 0;
-    left: 0;
+}
+.footer div{
+    display: inline;
+    margin: auto;
+    padding: 10px;
 }
 .separador{
     border-top: 1px solid rgba(0,0,0,0.3);
@@ -146,6 +158,15 @@ a{
 }
 .btn-primary:hover{
     background: #FFD73D;}
+.btn-secondary{
+    background: #34495E;
+}
+.btn-secondary:hover{
+    transform: scale(1.5);
+}
+.color-white{
+    color: #fff;
+}
 .show{
 
     display: block;
@@ -196,7 +217,7 @@ a{
 
 .mensaje{
     text-align: center;
-    background: #FFCF0D;
+    background: #FFD73D;
     border-radius: 5px;
     width: 500px;
     margin: auto;

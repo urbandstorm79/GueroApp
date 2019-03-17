@@ -18,7 +18,7 @@
 		<li><a href="logOut.php"><i class="fas fa-door-open"></i> Cerrar sesión</a></li>
 	</ul>
 
-	<footer class="footer">
+	<footer class="">
 		<p class="separador">Todos los derechos reservados a GueroApp 2019 <i class="far fa-copyright"></i></p>
 	</footer>
 </nav>

@@ -1,4 +1,5 @@
 <?php  require 'controller/sessionUser.php';
+require 'controller/userDataPrint.php';
 require 'controller/updateUser.php';
 ?>
 <!doctype html>
@@ -22,38 +23,41 @@ if (!empty($msj)){
 }
 ?>
 
-<div class="formulario">
-	<h2>Configuracion de usuarios</h2>
-	<form action="userSettings.php" method="post">
-		<div class="formulario-flex">
-			<div class="wdt-50">
-				<input type="text" name="name" placeholder="Nombre">
-				<label>Nombre</label>
-			</div>
-			<div class="wdt-50">
-				<input type="text" name="lastName" placeholder="Apellidos">
-				<label for="LastName">Apellidos</label>
-			</div>
-			<div class="wdt-100">
-				<input type="email" name="mail" placeholder="Correo electronico">
-				<label for="mail">Correo electronico</label>
-			</div>
-			<div class="wdt-40">
-				<input type="text" name="user" placeholder="Nombre de usuario">
-				<label for="user">Nombre de usuario</label>
-			</div>
+<div class="contenedor">
+    <div class="formulario">
+        <h2>Configuracion de usuarios</h2>
+        <form action="userSettings.php" method="post">
+            <div class="formulario-flex">
+                <div class="wdt-50">
+                    <input type="text" name="name" placeholder="Nombre" <?php echo 'value="'.$usr['nombre'].'"'?> >
+                    <label>Nombre</label>
+                </div>
+                <div class="wdt-50">
+                    <input type="text" name="lastName" placeholder="Apellidos" <?php echo 'value="'.$usr['apellido'].'"'?>>
+                    <label for="LastName">Apellidos</label>
+                </div>
+                <div class="wdt-100">
+                    <input type="email" name="mail" placeholder="Correo electronico" <?php echo 'value="'.$usr['correo'].'"'?>>
+                    <label for="mail">Correo electronico</label>
+                </div>
+                <div class="wdt-40">
+                    <input type="text" name="user" placeholder="Nombre de usuario" <?php echo 'value="'.$usr['nombreUsuario'].'"'?>>
+                    <label for="user">Nombre de usuario</label>
+                </div>
 
-			<div class="wdt-60">
-				<input type="password" name="pass" placeholder="Contraseña">
-				<label for="pass">Contraseña</label>
-			</div>
-			<div class="wdt-100">
-				<input type="tel" name="tel" placeholder="Telefono">
-				<label for="tel">Telefono</label>
-			</div>
-			<button type="submit" class="btn btn-primary btn-block">Modificar datos</button>
-		</div>
-	</form>
+                <div class="wdt-60">
+                    <input type="password" name="pass" placeholder="Contraseña" <?php echo 'value="'.$usr['contra'].'"'?>>
+                    <label for="pass">Contraseña</label>
+                </div>
+                <div class="wdt-100">
+                    <input type="tel" name="tel" placeholder="Telefono" <?php echo 'value="'.$usr['telefono'].'"'?>>
+                    <label for="tel">Telefono</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Modificar datos</button>
+            </div>
+        </form>
+    </div>
 </div>
+<?php  require 'layouts/footer.php'?>
 </body>
 </html>
