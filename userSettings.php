@@ -1,4 +1,6 @@
-<?php ?>
+<?php  require 'controller/sessionUser.php';
+require 'controller/updateUser.php';
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -13,11 +15,16 @@
 <?php
 require 'layouts/menu-nav.php';
 require 'layouts/side-nav.php';
+if (!empty($msj)){
+    echo '
+    <h3 class="mensaje">'.$msj.'</h3>
+    ';
+}
 ?>
 
 <div class="formulario">
 	<h2>Configuracion de usuarios</h2>
-	<form action="#">
+	<form action="userSettings.php" method="post">
 		<div class="formulario-flex">
 			<div class="wdt-50">
 				<input type="text" name="name" placeholder="Nombre">
@@ -44,7 +51,7 @@ require 'layouts/side-nav.php';
 				<input type="tel" name="tel" placeholder="Telefono">
 				<label for="tel">Telefono</label>
 			</div>
-			<button class="btn btn-primary btn-block">Modificar datos</button>
+			<button type="submit" class="btn btn-primary btn-block">Modificar datos</button>
 		</div>
 	</form>
 </div>

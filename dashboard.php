@@ -1,27 +1,6 @@
 <?php
 
-session_start();
-
-
-require 'controller/connection.php';
-
-if (isset($_SESSION['user-id'])){
-
-
-$records = $conn->prepare('SELECT nombreUsuario FROM usuarios WHERE idUsuarios = :id');
-	$records->bindParam(':id',$_SESSION['user-id']);
-	$records->execute();
-	$results = $records->fetch(PDO::FETCH_ASSOC);
-
-	$user = null;
-
-	if (!empty($results)) {
-		$user = $results;
-		echo $user['nombreUsuario'];
-		echo 'Todo bien';
-	}
-
-}
+require 'controller/sessionUser.php'
 ?>
 
 <!doctype html>
