@@ -37,36 +37,54 @@ if (!empty($_POST['user']) && !empty($_POST['password'])){
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="css/style.css">
+	<?php require 'layouts/head-files.php'?>
 	<title>LogIn</title>
 </head>
 <body>
-
-<header class="nav">
-	<nav class="">
-		<h2>GüeroApp</h2>
-	</nav>
-</header>
+<nav class="navbar navbar-light bg-light shadow mb-5">
+    <div class="navbar-brand">
+        <h2>GüeroApp</h2>
+    </div>
+</nav>
 <?php if (!empty($mensaje)){
-    echo '<h3 class="mensaje">'.$mensaje.'</h3>';
+    echo '<h4 class="alert-info text-center">'.$mensaje.'</h4>';
 }?>
-<div class="formulario">
-	<h2>Iniciar sesión</h2>
-	<form action="login.php" method="POST">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-xl-6">
+            <div class="card bg-light shadow-sm p-2">
+                <h2>Iniciar sesión</h2>
+                <form action="login.php" method="POST" class="needs-validation">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <label for="user" class="sr-only">Usuario o correo</label>
+                            <input type="text" class="form-control" name="user" placeholder="Usuario o correo" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <label class="sr-only">Contraseña</label>
+                            <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
+                        </div>
 
-		<div class="row">
-			<input type="text" name="user" placeholder="Usuario o correo" required>
-			<label for="user">Usuario o correo</label>
-		</div>
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-block">LogIn</button>
+                    <p>Crea una cuenta dando clic <a href="signUp.php">aquí</a></p>
 
-		<input type="password" name="password" placeholder="Contraseña" required>
-		<label>Contraseña</label>
-		<button type="submit" class="btn btn-primary btn-block">LogIn</button>
-		<p>Crea una cuenta dando clic <a href="signUp.php">aquí</a></p>
-
-		<!-- esta etiqueta es solo temporal, despues la quito, es para evitar el logueo -->
-        <!-- <a href="dashboard.php">ir a dashboard</a> -->
-	</form>
+                    <!-- esta etiqueta es solo temporal, despues la quito, es para evitar el logueo -->
+                    <!-- <a href="dashboard.php">ir a dashboard</a> -->
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
 </div>
 </body>
 </html>

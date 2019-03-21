@@ -25,7 +25,7 @@ if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userN
 	}
 
 }else{
-	echo 'Vacio';
+	//echo 'Vacio';
 }
 
 ?>
@@ -38,58 +38,112 @@ if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userN
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<link rel="stylesheet" href="css/style.css">
+	<?php require 'layouts/head-files.php'?>
 	<title>Registrar usuario</title>
 </head>
 <body>
 
-<nav class="nav">
-	<div class="    ">
+<nav class="navbar navbar-light bg-light shadow">
+	<div class="navbar-brand">
 		<h2 class="">GüeroApp</h2>
 	</div>
 </nav>
 
 <?php if (!empty($mensaje)){
-    echo '<h3 class="mensaje">'.$mensaje.'</h3>';
+    echo '<h3 class="alert-info">'.$mensaje.'</h3>';
 }?>
 
-<div class="formulario">
-	<h2>Crea una cuenta</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="card shadow-sm mt-5 p-2 bg-light">
+                <h2>Crea una cuenta</h2>
 
-        <form action="signUp.php" method="POST">
-            <div class="formulario-flex">
-            <div class="wdt-50">
-                <input type="text" name="name" placeholder="Nombre" >
-                <label for="name">Nombre</label>
+                <form action="signUp.php" method="POST" class="">
+                    <div class="">
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text"><i
+                                                    class="fas fa-address-card"></i></span></div>
+                                    <label for="name" class="sr-only">Nombre</label>
+                                    <input type="text" name="name" placeholder="Nombre" class="form-control" >
+                                </div>
+
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text"><i
+                                                    class="fas fa-address-card"></i></span></div>
+                                    <label class="sr-only">Apellido</label>
+                                    <input class="form-control" type="text" name="lastName" placeholder="Apellido" >
+                                </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text"><i
+                                                    class="fas fa-at"></i></span></div>
+                                    <input class="form-control" type="email" name="mail" placeholder="Correo eléctronico"> <!-- falta agregar -->
+                                    <label class="sr-only" for="mail">Correo eléctronico</label>
+                                </div>
+                        </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-7">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <label class="sr-only">Nombre de usuario</label>
+                                    <input class="form-control" type="text" name="userName" placeholder="Nombre de usuario" >
+                                </div>
+
+                            </div>
+                            <div class="form-group col-lg-5">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <label class="sr-only">Contraseña</label>
+                                    <input class="form-control" type="password" name="password" placeholder="Contraseña">
+                                </div>
+                        </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    </div>
+                                    <label class="sr-only">Numero de teléfono</label>
+                                    <input class="form-control" type="tel" name="tel" placeholder="Numero de teléfono">
+                                </div>
+
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                    </div>
+                                    <label class="sr-only" for="date">Fecha de nacimiento</label>
+                                    <input class="form-control" type="date" name="date" placeholder="Fecha de nacimiento">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-block">Registrar</button>
+                        <p>Ya tienes una cuenta? Inicia sesión <a href="login.php">aquí</a></p>
+                    </div>
+                </form>
+
             </div>
-            <div class="wdt-50">
-                <input type="text" name="lastName" placeholder="Apellido" >
-                <label>Apellido</label>
-            </div>
-            <div class="wdt-50">
-                <input type="email" name="mail" placeholder="Correo eléctronico"> <!-- falta agregar -->
-                <label for="mail">Correo eléctronico</label>
-            </div>
-            <div class="wdt-50">
-                <input type="text" name="userName" placeholder="Nombre de usuario" >
-                <label>Nombre de usuario</label>
-            </div>
-            <div class="wdt-60">
-                <input type="password" name="password" placeholder="Contraseña">
-                <label>Contraseña</label>
-            </div>
-                <div class="wdt-40">
-                    <input type="date" name="date" placeholder="Fecha de nacimiento">
-                    <label for="date">Fecha de nacimiento</label> <!-- falta agregar -->
-                </div>
-            <div class="wdt-100">
-                <input type="tel" name="tel" placeholder="Numero de teléfono">
-                <label>Numero de teléfono</label>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
-            </div>
-        </form>
-	<p>Ya tienes una cuenta? Inicia sesión <a href="login.php">aquí</a></p>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
 </div>
 </body>
 </html>
