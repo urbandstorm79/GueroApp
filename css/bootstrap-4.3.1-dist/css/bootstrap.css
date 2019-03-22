@@ -5122,7 +5122,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   padding-right: 4rem;
 }
 
-.alert-dismissible .close {
+.alert-dismissible .cerrar {
   position: absolute;
   top: 0;
   right: 0;
@@ -5637,7 +5637,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   border-color: #1b1e21;
 }
 
-.close {
+.cerrar {
   float: right;
   font-size: 1.5rem;
   font-weight: 700;
@@ -5647,16 +5647,16 @@ a.badge-dark:focus, a.badge-dark.focus {
   opacity: .5;
 }
 
-.close:hover {
+.cerrar:hover {
   color: #000;
   text-decoration: none;
 }
 
-.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+.cerrar:not(:disabled):not(.disabled):hover, .cerrar:not(:disabled):not(.disabled):focus {
   opacity: .75;
 }
 
-button.close {
+button.cerrar {
   padding: 0;
   background-color: transparent;
   border: 0;
@@ -5665,7 +5665,7 @@ button.close {
   appearance: none;
 }
 
-a.close.disabled {
+a.cerrar.disabled {
   pointer-events: none;
 }
 
@@ -5860,7 +5860,7 @@ a.close.disabled {
   border-top-right-radius: 0.3rem;
 }
 
-.modal-header .close {
+.modal-header .cerrar {
   padding: 1rem 1rem;
   margin: -1rem -1rem -1rem auto;
 }

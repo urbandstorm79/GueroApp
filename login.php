@@ -47,13 +47,15 @@ if (!empty($_POST['user']) && !empty($_POST['password'])){
     </div>
 </nav>
 <?php if (!empty($mensaje)){
-    echo '<h4 class="alert-info text-center">'.$mensaje.'</h4>';
+    echo '<div class="alert alert-warning wdt-50 m-auto" role="alert"><p class="d-inline">'.$mensaje. '</p> <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>';
 }?>
 <div class="container">
     <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-xl-6">
-            <div class="card bg-light shadow-sm p-2">
+            <div class="card bg-light shadow-sm p-2 mt-2">
                 <h2>Iniciar sesión</h2>
                 <form action="login.php" method="POST" class="needs-validation">
                     <div class="form-group">
