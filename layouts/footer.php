@@ -7,7 +7,7 @@
  */
 ?>
 <div class="footer">
-	<div class="">
+	<div class="text-muted">
 		<h3>Siguenos en nuestras redes sociales</h3>
 	</div>
 	<div class="">

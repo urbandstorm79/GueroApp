@@ -1,8 +1,8 @@
-<div id="side">
-    <nav id="side-nav" class="side-nav" v-bind:class="[isActive? 'show':'hide']" @click="toggleClass()">
-        <!--<div class="nav"><a href="#" class="menu-btn"><i class="fas fa-bars"></i></a>-->
-        <!--<h2>GüeroApp</h2>-->
-        <!--</div>-->
+<div class="">
+    <nav id="side-nav" class="side-nav">
+<!--        <div class="navbar navbar-light bg-light"><a href="#" class="menu-btn"><i class="fas fa-bars"></i></a>-->
+<!--        <h2>GüeroApp</h2>-->
+<!--        </div>-->
         <div class="user">
             <div class="user-img w-100"><i class="fas fa-user-circle"></i></div>
 			<?php if (!empty($user)){
