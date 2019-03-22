@@ -1,0 +1,57 @@
+*{
+	box-sizing: border-box;
+}
+.loginPanel{
+	width: 100%;
+	max-width: 500px;
+	margin: 50px auto;
+	padding: 10px;
+	border-radius: 5px;
+	-webkit-box-shadow: 3px 6px 24px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 6px 24px 0px rgba(0,0,0,0.75);
+	box-shadow: 3px 6px 24px 0px rgba(0,0,0,0.75);
+	background: #ffc054; /* Aqui va el color */
+}
+
+.panel{
+	width: 100%;
+	max-width: 500px;
+	padding: 10px;
+	margin-top: 50px;
+	margin: 50px auto;
+	background: #ffcf68; /* Aqui va el color */
+	position: relative;
+	border-radius: 10px;
+}
+
+.panelH{
+	width: 100%;
+	max-width: 800px;
+	padding: 5px;
+	margin-top: 50px;
+	margin: 50px auto;
+	background: #ffcf68; /* Aqui va el color */
+	position: relative;
+	border-radius: 10px;
+}
+.btn{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+body{
+
+	background-image: url(../fondo.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-color:#443e2f;
+
+}
+h4{
+	text-align-last: center;
+	position: center;
+	color: Dark;
+}
+.w100{
+
+	width: 50%;
+}
