@@ -18,13 +18,6 @@ a{
     font-size: 25px;
     color: black;
 }
-.menu-btn:hover{background: #fafafa;
-    border-radius: 50px;}
-.menu-btn:active {
-    color: #FFD73D;
-    background: rgba(0,0,0,0.4);
-    border-radius: 50px;
-}
 .cerrar{
     float: right;
     font-size: 16px;
@@ -49,13 +42,14 @@ a{
     min-height: 100vh;
 }
 .side-nav{
-    width: 90%;
+    width: 100%;
     max-width: 250px;
     background: #fafafa;
-    min-height: 100%;
-    position: absolute;
+    height: 100%;
+    position: fixed;
     padding: 0 5px;
     margin-top: -7px;
+    z-index: 1;
     display: none;
     transition-duration: 1s;
     transition-timing-function: ease-in;

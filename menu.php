@@ -18,18 +18,28 @@ require 'controller/sessionUser.php';
 require 'layouts/menu-nav.php';
 require 'layouts/side-nav.php';
 ?>
-<div class="container">
+<div class="container-fluid mt-5">
 	<div class="row">
 		<div class="col-lg-4"></div>
-		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+
+        </div>
 		<div class="col-lg-4"></div>
 	</div>
 	<div class="row">
 		<div class="col-lg-2"></div>
 		<div class="col-lg-8">
-			<div class="card-deck">
-
+            <h2 class="text-center">Plato principal</h2>
+			<div class="row">
+				<?php require 'controller/menuController.php'?>
+				<script>
+					
+				</script>
 			</div>
+            <h2 class="text-center">Bebidas</h2>
+            <div class="card-deck">
+
+            </div>
 		</div>
 		<div class="col-lg-2"></div>
 	</div>

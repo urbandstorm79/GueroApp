@@ -24,9 +24,9 @@ if (!empty($msj)){
 }
 ?>
 
-<div class="container">
-   <div class="row">
-       <div class="col-lg-3"></div>
+<div class="container contenedor">
+   <div class="row d-flex justify-content-center align-content-center">
+       <div class="col-lg-3 mt-5"></div>
        <div class="col-lg-6">
            <div class="card bg-light shadow-sm p-2 mt-xl-5">
                <form action="userSettings.php" method="post">

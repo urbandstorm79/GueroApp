@@ -3,9 +3,9 @@
     <!--        <h2>GüeroApp</h2>-->
     <!--        </div>-->
     <div class="user">
-        <div class="user-img w-100"><i class="fas fa-user-circle"></i></div>
+        <div class="user-img w-100 text-center"><i class="fas fa-user-circle"></i></div>
 		<?php if (!empty($user)){
-			echo '<p> Bienvenido '.$user['nombreUsuario'].'</p>';//concatenar con .
+			echo '<strong> Bienvenido '.$user['nombreUsuario'].'</strong>';//concatenar con .
 		}
 		?>
     </div>

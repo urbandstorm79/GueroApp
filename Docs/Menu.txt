@@ -1,0 +1,19 @@
+Menu
+Orden tacos 30
+Hamburguesas pollo-carne 45
+Enchiladas 35
+Enchiladas suizas 40
+Burritos: carne asada y adobada 45
+Chimichangas 50
+Sopes pollo 30
+Tortas: jamon, pierna, lomo, 30 cubana 40---La voy a editar
+Espagueti Alfredo 50
+Ensalada de pollo 50
+Bagguetes de pollo a la plansha 45
+Orden Quesedillas: sencillas 20
+Orden Quesedillas: Carne adobada, asada 30
+Sandwich: pollo, jamon, panela 30
+Sandwich pan artesanal de Cuiliacan:pollo, jamon, panela 39
+
+
+
