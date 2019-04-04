@@ -18,8 +18,24 @@ require 'controller/sessionUser.php'
 <?php  require 'layouts/menu-nav.php'?>
 
 
-<div class="contenedor">
-    <div class="mensaje"><h2 class="">Hola</h2></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 justify-content-center align-content-center" style="height: 400px; background-image: url(img/fondoMedi.jpg); background-size: cover; background-position: center center; background-attachment: fixed">
+           <h2 class="display-1 text-white text-center">GüeroApp</h2>
+            <h2 class="text-center text-white">A tu servicio</h2>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <img src="" alt="">
+            </div>
+            <div class="col-lg-6"></div>
+        </div>
+
+    </div>
+    <div class="row"></div>
 </div>
 
 <?php  require 'layouts/footer.php'?>
