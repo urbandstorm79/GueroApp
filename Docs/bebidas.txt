@@ -1,0 +1,13 @@
+Bebidas 
+Cocacola
+sprite
+mirinda
+manzanita
+pepsi
+squirt
+7up
+fanta
+agua de jamaica, horchata, tamarindo.
+
+bebidas alcoholicas 
+Corona
