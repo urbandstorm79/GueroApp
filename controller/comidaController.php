@@ -12,8 +12,8 @@ $menu->execute();
 
 
 while ($resultado = $menu->fetch()): ?>
-    <div class="col-lg-4 mb-4">
-        <div class="card shadow" style="height: 400px">
+    <div class="col-md-4 mb-4">
+        <div class="card bg-light" style="height: 400px">
             <img src="<?=$resultado['img_comidas']?>" alt="Imagen" class="card-img-top">
             <div class="card-body">
                 <h4 class="card-title"> <?=$resultado['nombre_comidas']?></h4>
@@ -24,5 +24,4 @@ while ($resultado = $menu->fetch()): ?>
     </div>
 <?php endwhile;?>
 
-<script></script>
 

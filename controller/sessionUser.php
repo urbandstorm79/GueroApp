@@ -27,5 +27,5 @@ if (isset($_SESSION['user-id'])){
 	}
 
 }else{
-	header('Location: ../login.php');
+	header('Location: ../../GueroApp/login.php');
 }

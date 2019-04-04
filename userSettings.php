@@ -15,7 +15,6 @@ require 'controller/updateUser.php';
 <body>
 <?php
 require 'layouts/menu-nav.php';
-require 'layouts/side-nav.php';
 
 if (!empty($msj)){
     echo '
@@ -24,7 +23,7 @@ if (!empty($msj)){
 }
 ?>
 
-<div class="container contenedor">
+<div class="container">
    <div class="row d-flex justify-content-center align-content-center">
        <div class="col-lg-3 mt-5"></div>
        <div class="col-lg-6">

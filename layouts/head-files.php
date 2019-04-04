@@ -14,4 +14,4 @@
 <script src="../../GueroApp/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="js/scripts.js"></script>
+<!--<script src="js/scripts.js"></script>-->

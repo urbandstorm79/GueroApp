@@ -16,4 +16,5 @@
 		<div class=""><a href="#" class="btn btn-secondary color-white"><li class="fab fa-instagram"></li></a></div>
 		<div class=""><a href="#" class="btn btn-secondary color-white"><li class="fab fa-youtube"></li></a></div>
 	</div>
+    <p class="text-muted text-center">Todos los derechos reservados a GueroApp 2019 <i class="far fa-copyright"></i></p>
 </div>

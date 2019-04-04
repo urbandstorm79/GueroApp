@@ -5,9 +5,17 @@
  * Date: 16/03/2019
  * Time: 03:09 PM
  */?>
-<nav class="navbar navbar-light bg-light  fixed-top shadow">
+<nav class="navbar navbar-light bg-light  sticky-top shadow">
 	<div class="navbar-brand d-flex">
-		<button href="" class="menu-btn btn"><i class="fas fa-bars"></i></button>
+		<div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <?php require 'side-nav.php'?>
+            </div>
+        </div>
+        </div>
 		<h2 class="">GüeroApp</h2>
 	</div>
     <div class="navbar-nav">

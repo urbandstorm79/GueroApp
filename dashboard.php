@@ -16,7 +16,6 @@ require 'controller/sessionUser.php'
 </head>
 <body>
 <?php  require 'layouts/menu-nav.php'?>
-<?php require 'layouts/side-nav.php'?>
 
 
 <div class="contenedor">
