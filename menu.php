@@ -48,7 +48,7 @@ require 'layouts/menu-nav.php';
                         <div class="tab-pane fade show active" id="pills-comida" role="tabpanel" aria-labelledby="pills-comida-tab">
                             <h2 class="text-center">Plato principal</h2>
                             <div class="card-deck">
-                                <?php require 'controller/comidaController.php' ?>
+								<?php require 'controller/comidaController.php' ?>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-bebida" role="tabpanel" aria-labelledby="pills-bebida-tab">

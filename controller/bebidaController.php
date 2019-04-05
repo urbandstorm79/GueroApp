@@ -11,7 +11,10 @@ while ($resultado = $menu->fetch()): ?>
 			<div class="card-body">
 				<h4 class="card-title"> <?=$resultado['nombre_bebidas']?></h4>
 				<p class="card-text">$<?=$resultado['precio_bebidas']?></p>
-				<button class="btn btn-info"><i class="fas fa-plus"></i> Agregar a pedido</button>
+                <div class="btn-group">
+                    <button class="btn btn-info"><i class="fas fa-plus"></i></button>
+                    <button class="btn btn-info"> Agregar a pedido</button>
+                </div>
 			</div>
 		</div>
 	</div>
