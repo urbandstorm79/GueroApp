@@ -1,32 +1,40 @@
 <?php
 require 'controller/connection.php';
-$mensaje ="";
+session_start();
 
-if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userName']) && !empty($_POST['password']) && !empty($_POST['mail']) && !empty($_POST['date'])){
-	$query = "INSERT INTO usuarios (nombre, apellido, correo, nombreUsuario, contra, fecha, telefono) VALUES (:nombre,:lastN,:email, :usuario, :pass, :datee, :tel)";
-	$state = $conn->prepare($query);
-	$state->bindParam(':nombre', $_POST['name']);
-	$state->bindParam(':lastN',$_POST['lastName']);
-	$state->bindParam(':email', $_POST['mail']);
-	$state->bindParam(':usuario',$_POST['userName']);
-	$state->bindParam(':pass',$_POST['password']);
-		$state->bindParam(':datee',$_POST['date']);
-	$state->bindParam(':tel',$_POST['tel']);
 
-	if ($state->execute()){
-		$titulo= 'Usuario Creado';
-		$mensaje= 'Ya puedes iniciar sesion';
-        header('Location: login.php');
-		// echo $mensaje;
-	}else{
-		$titulo= 'Error';
-		$mensaje= 'Ocurrio algo inesperado';
-		//echo $mensaje;
-	}
-
+if (isset($_SESSION['user-id'])){
+	header('Location: ../../GueroApp/dashboard.php');
 }else{
-	//echo 'Vacio';
+	$mensaje ="";
+
+	if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userName']) && !empty($_POST['password']) && !empty($_POST['mail']) && !empty($_POST['date'])){
+		$query = "INSERT INTO usuarios (nombre, apellido, correo, nombreUsuario, contra, fecha, telefono) VALUES (:nombre,:lastN,:email, :usuario, :pass, :datee, :tel)";
+		$state = $conn->prepare($query);
+		$state->bindParam(':nombre', $_POST['name']);
+		$state->bindParam(':lastN',$_POST['lastName']);
+		$state->bindParam(':email', $_POST['mail']);
+		$state->bindParam(':usuario',$_POST['userName']);
+		$state->bindParam(':pass',$_POST['password']);
+		$state->bindParam(':datee',$_POST['date']);
+		$state->bindParam(':tel',$_POST['tel']);
+
+		if ($state->execute()){
+			$titulo= 'Usuario Creado';
+			$mensaje= 'Ya puedes iniciar sesion';
+			header('Location: login.php');
+			// echo $mensaje;
+		}else{
+			$titulo= 'Error';
+			$mensaje= 'Ocurrio algo inesperado';
+			//echo $mensaje;
+		}
+
+	}else{
+		//echo 'Vacio';
+	}
 }
+
 
 ?>
 
@@ -56,8 +64,8 @@ if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userN
 <div class="container">
     <div class="row">
         <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-            <div class="card shadow-sm mt-5 p-2 bg-light">
+        <div class="col-lg-6 ">
+            <div class="card shadow-sm p-2 bg-light" style="margin: 100px auto;;">
                 <h2>Crea una cuenta</h2>
 
                 <form action="signUp.php" method="POST" class="">

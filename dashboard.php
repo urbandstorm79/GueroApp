@@ -43,7 +43,7 @@ require 'controller/sessionUser.php'
         </div>
 
     </div>
-    <div class="row justify-content-center" style="background-color: #CC4451">
+    <div class="row justify-content-center" style="background-color: #FFF486">
         <div class="col-lg-6">
             <div class="p-5">
                 <p class="text-justify">Ordene sus menus de forma agradable y accesible para sus clientes. Deje de vivir en el pasado, dele a sus clientes el poder de tomar la decision por completo sobre

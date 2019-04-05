@@ -6,7 +6,7 @@
  * Time: 04:23 PM
  */
 ?>
-<div class="footer mt-5">
+<div class="footer" style="height: 300px;">
 	<div class="text-muted">
 		<h3>Siguenos en nuestras redes sociales</h3>
 	</div>

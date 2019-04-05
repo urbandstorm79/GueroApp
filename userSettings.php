@@ -27,7 +27,7 @@ if (!empty($msj)){
    <div class="row d-flex justify-content-center align-content-center">
        <div class="col-lg-3 mt-5"></div>
        <div class="col-lg-6">
-           <div class="card bg-light shadow-sm p-2 mt-xl-5">
+           <div class="card bg-light shadow-sm p-2" style="margin: 120px auto">
                <form action="userSettings.php" method="post">
                    <h2>Configuracion de usuarios</h2>
                    <div class="form-group">
@@ -44,7 +44,7 @@ if (!empty($msj)){
 
                            </div>
                            <div class="col-lg-6 form-group">
-                               <div class="input-group">
+                               <div class="input-group ">
                                    <div class="input-group-prepend">
                                        <span class="input-group-text"><i class="fas fa-address-card"></i>
                                        </span>
@@ -55,8 +55,8 @@ if (!empty($msj)){
                            </div>
                        </div>
                        <div class="row">
-                           <div class="col-lg-12 form-group">
-                               <div class="input-group">
+                           <div class="col-lg-12 form-group ">
+                               <div class="input-group ">
                                    <div class="input-group-prepend">
                                        <span class="input-group-text">
                                            <i class="fas fa-at"></i>
@@ -69,7 +69,7 @@ if (!empty($msj)){
                        </div>
                        <div class="row">
                            <div class="col-lg-5 form-group">
-                               <div class="input-group">
+                               <div class="input-group ">
                                    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>
                                    <label class="sr-only" for="user">Nombre de usuario</label>
                                    <input class="form-control" type="text" name="user" placeholder="Nombre de usuario" <?php echo 'value="'.$usr['nombreUsuario'].'"'?>>
@@ -78,7 +78,7 @@ if (!empty($msj)){
                            </div>
 
                            <div class="col-lg-7 form-group">
-                               <div class="input-group">
+                               <div class="input-group ">
                                    <div class="input-group-prepend"><span class="input-group-text"><i
                                                    class="fas fa-key"></i></span></div>
                                    <input class="form-control" type="password" name="pass" placeholder="Contraseña" <?php echo 'value="'.$usr['contra'].'"'?>>
@@ -88,7 +88,7 @@ if (!empty($msj)){
                        </div>
                        <div class="row">
                            <div class="col-lg-12 form-group">
-                               <div class="input-group">
+                               <div class="input-group ">
                                    <div class="input-group-prepend">
                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                    </div>
@@ -98,7 +98,7 @@ if (!empty($msj)){
                            </div>
                        </div>
                        <div class="row">
-                           <div class="col-lg-12 form-group">
+                           <div class="col-lg-12 form-group ">
                                <button type="submit" class="btn btn-warning btn-block">Modificar datos</button>
                            </div>
                        </div>

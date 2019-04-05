@@ -19,6 +19,6 @@
 		<h2 class="">GüeroApp</h2>
 	</div>
     <div class="navbar-nav">
-       <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i></a></li>
+       <li class="nav-item"><a href="#" class="nav-link btn dropdown-toggle"><i class="fas fa-shopping-cart"></i></a></li>
     </div>
 </nav>
