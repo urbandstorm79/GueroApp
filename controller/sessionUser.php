@@ -6,8 +6,6 @@
  * Time: 01:59 PM
  */
 session_start();
-
-
 require 'connection.php';
 
 if (isset($_SESSION['user-id'])){

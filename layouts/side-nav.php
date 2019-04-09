@@ -4,7 +4,8 @@
     <!--        </div>-->
     <div class="user">
         <div class="user-img w-100 text-center"><i class="fas fa-user-circle"></i></div>
-		<?php if (!empty($user)){
+		<?php
+        if (!empty($user)){
 			echo '<strong> Bienvenido '.$user['nombreUsuario'].'</strong>';//concatenar con .
 		}
 		?>

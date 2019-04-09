@@ -1,3 +1,4 @@
+<?php require 'controller/sessionUser.php'?>
 <!DOCTYPE html>
 <html>
 <head>
