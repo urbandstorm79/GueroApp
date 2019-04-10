@@ -30,7 +30,7 @@ require 'layouts/menu-nav.php';
 		<div class="col-lg-2"></div>
 		<div class="col-lg-8">
 			<div class="row">
-                <div class="col-lg-12">
+                <div class="col-md-12">
 
 
                     <ul class="nav nav-pills mb-3 rounded p-2 border" id="pills-tab" role="tablist">
@@ -47,7 +47,7 @@ require 'layouts/menu-nav.php';
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-comida" role="tabpanel" aria-labelledby="pills-comida-tab">
                             <h2 class="text-center">Plato principal</h2>
-                            <div class="card-deck">
+                            <div class="card-deck" >
 								<?php require 'controller/comidaController.php' ?>
                             </div>
                         </div>
