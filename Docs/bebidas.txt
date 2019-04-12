@@ -4,10 +4,18 @@ sprite
 mirinda
 manzanita
 pepsi
-squirt
 7up
 fanta
 agua de jamaica, horchata, tamarindo.
 
 bebidas alcoholicas 
 Corona
+VICTORIA
+INDIO
+XX LAGUER
+SOL CLAMATO
+NEGRA MODELO
+BARRILITO
+PACIFICO
+TECATE
+MODELO ESPECIAL

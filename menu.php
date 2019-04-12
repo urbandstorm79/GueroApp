@@ -55,10 +55,14 @@ require 'layouts/menu-nav.php';
                             <h2 class="text-center">Bebidas</h2>
                             <div class="card-deck">
                                 <?php require 'controller/bebidaController.php'?>
+                                <?php require 'controller/bebidaAController.php'?>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-postre" role="tabpanel" aria-labelledby="pills-postre-tab">
                             <h2>Postres</h2>
+                            <div class="card-deck">
+                                <?php require 'controller/postreController.php'?>
+                            </div>
                         </div>
                     </div>
 

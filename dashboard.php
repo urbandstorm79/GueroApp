@@ -34,7 +34,7 @@ require 'controller/sessionUser.php'
                 </div>
                 <div class="col-lg-6">
                     <div class="p-5 text-justify">
-                        <p>El equipo de GüeroApp se preocupa por sus clientes, en especifico pr que nuestros clientes puedan ofrecer un servicio de la mas alta calidad
+                        <p>El equipo de GüeroApp se preocupa por sus clientes, en especifico por que nuestros clientes puedan ofrecer un servicio de la mas alta calidad
                             con la total seguridad de que sus comensales, saldran con el estomago lleno y con gran sonrisa. El objetivo de la aplicacion, es el de permitir
                             que las ordenes sean entregadas a tiempo y eficazmente.</p>
                     </div>
