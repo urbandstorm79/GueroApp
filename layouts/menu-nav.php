@@ -12,7 +12,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <?php require 'side-nav.php'?>
+                <?php require 'side-nav.php';?>
             </div>
         </div>
         </div>

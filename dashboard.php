@@ -17,7 +17,6 @@ require 'controller/sessionUser.php'
 <body>
 <?php  require 'layouts/menu-nav.php'?>
 
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12" style="height: 400px; background-image: url(img/fondoMedi.jpg); background-size: cover; background-position: center center; background-attachment: fixed">
