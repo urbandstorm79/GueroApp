@@ -1,5 +1,6 @@
 <?php
 require 'controller/sessionUser.php';
+require 'controller/carritoController.php';
 
 ?>
 <!doctype html>
@@ -29,9 +30,16 @@ require 'layouts/menu-nav.php';
 	<div class="row">
 		<div class="col-lg-2"></div>
 		<div class="col-lg-8">
-			<div class="row">
+            <?php
+            if (!empty($msj)):
+            ?>
+            <div class="alert alert-success" role="alert">
+                <strong><?=$msj?></strong> <a href="carrito.php" class="badge badge-info">Ver orden</a>
+            </div>
+            <?php endif;
+            ?>
+            <div class="row">
                 <div class="col-md-12">
-
 
                     <ul class="nav nav-pills mb-3 rounded p-2 border" id="pills-tab" role="tablist">
                         <li class="nav-item">
@@ -47,8 +55,9 @@ require 'layouts/menu-nav.php';
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-comida" role="tabpanel" aria-labelledby="pills-comida-tab">
                             <h2 class="text-center">Plato principal</h2>
+
                             <div class="card-deck" >
-								<?php require 'controller/comidaController.php' ?>
+								<?php require 'controller/comidaController.php'?>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-bebida" role="tabpanel" aria-labelledby="pills-bebida-tab">

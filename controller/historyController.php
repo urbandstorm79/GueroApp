@@ -12,6 +12,7 @@ if($rows>0){
     <table class="table text-center">
         <thead>
             <th class="">Pedido</th>
+            <th>Cantidad</th>
             <th class="">Precio</th>
             <th class="">Fecha</th>
         </thead>
@@ -30,6 +31,7 @@ if($rows>0){
                 $total+=$rsF['precio_comidas'];
             ?>
         <td><?=$rsF['nombre_comidas']?></td>
+            <td>1</td>
                 <td>$<?=$rsF['precio_comidas'] ?></td>
             <td><?=$result['fecha']?></td>
 
@@ -45,13 +47,14 @@ if($rows>0){
                 $total+=$rsD['precio_bebidas'];
 				?>
                 <td><?=$rsD['nombre_bebidas']?></td>
+            <td>1</td>
                 <td>$<?=$rsD['precio_bebidas']?></td>
                 <td><?=$result['fecha']?></td>
 			<?php endwhile;?>
 
         </tr>
-        <tr class="col"><th>Total</th>
-            <td>$<?php echo $total?></td>
+        <tr class=""><th colspan="2">Total</th>
+            <td colspan="">$<?php echo $total?></td>
             <td></td>
         </tr>
         </tbody>
