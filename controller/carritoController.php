@@ -44,9 +44,23 @@ if (isset($_POST['btnAction'])){
 				$idOrden= array_column($_SESSION['carrito'],'idC');
 				if (in_array($id,$idOrden)){
 					echo '<script>alert("Producto ya seleccionado")</script>';
-					$msj="";
+//					$nuevaCantidad=0;
+//					foreach ($_SESSION['carrito'] as $index=> $itemC){
+//
+//						echo 'item '.$itemC['cantidadP'];
+//						$nuevaCantidad=$itemC['cantidadP']+$_POST['cantidadP'];
+//					}
+//					$orden= array(
+//						'idC'=>$id,
+//						'cantidadP'=>$nuevaCantidad,
+//						'nombre'=>$nombre,
+//						'precio'=>$precio
+//					);
+//					$_SESSION['carrito'][$numOrden]=$orden;
+					$msj= "";
 				}else{
 					$numOrden= count($_SESSION['carrito']);
+//					echo 'numeroOrden='.$numOrden;
 					$orden= array(
 						'idC'=>$id,
 						'cantidadP'=>$cantidad,
@@ -57,6 +71,26 @@ if (isset($_POST['btnAction'])){
 					$_SESSION['carrito'][$numOrden]=$orden;
 					$msj= "Producto agregado!! ";
 				}
+			}
+			break;
+		case 'Borrar':
+
+			if (is_numeric($_POST['id'])){
+				$id=$_POST['id'];
+				foreach ($_SESSION['carrito'] as $index=>$value){
+
+					if ($value['idC']==$id){
+						echo $index;
+						unset($_SESSION['carrito'][$index]);
+						sort($_SESSION['carrito']);
+
+
+						$elminado= 'El elemento ha sido eliminado';
+
+					}
+				}
+			}else{
+				$msj="Numero incorrecto ";
 			}
 			break;
 	}

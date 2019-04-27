@@ -21,7 +21,7 @@
 
 	</div>
     <div class="navbar-nav">
-       <li class="nav-item"><a href="carrito.php" class="nav-link btn dropdown-toggle"><i class="fas fa-shopping-cart"></i>
+       <li class="nav-item"><a href="carrito.php" class="nav-link btn"><i class="fas fa-shopping-cart"></i>
                (<?=empty($_SESSION['carrito'])?0:count($_SESSION['carrito']);?>)</a></li>
     </div>
 </nav>

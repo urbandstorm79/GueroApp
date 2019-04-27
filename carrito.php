@@ -6,6 +6,7 @@
  * Time: 07:13 PM
  */
 require 'controller/sessionUser.php';
+require 'controller/carritoController.php';
 
 ?>
 <!doctype html>
@@ -21,6 +22,11 @@ require 'controller/sessionUser.php';
 <body>
 <?php require 'layouts/menu-nav.php'?>
 <div class="container" style="margin-top:100px ">
+    <?php if (!empty($eliminado)){
+        echo '<div class="alert alert-danger" role="alert">
+        	<strong>'.$eliminado.'</strong>
+        </div>';
+	}?>
 	<div class="row">
 		<div class="col-lg-12">
             <h2 class="text-center">Tus pedidos</h2>
@@ -41,12 +47,17 @@ require 'controller/sessionUser.php';
                 $total=0;
                 foreach ($_SESSION['carrito'] as $index=>$item):?>
 				<tr>
-					<td scope="row"><?=$item['nombre']?></td>
+					<td scope="row"><?=$index.' '.$item['nombre']?></td>
 					<td><?=$item['cantidadP']?></td>
-					<td><?=$item['precio']?></td>
+					<td>$<?=$item['precio']?></td>
 					<td><?=number_format($item['precio']*$item['cantidadP'],2)?></td>
 					<td>
-						<button class="btn btn-warning">Cancelar</button></td>
+                        <form action="" method="post">
+                            <input type="hidden" value="<?=$item['idC']?>" name="id">
+                            <button type="submit" class="btn btn-warning" name="btnAction" value="Borrar" >Cancelar</button>
+                        </form>
+                    </td>
+
 				</tr>
 					<?php $total= $total+($item['precio']*$item['cantidadP'])?>
 				<?php endforeach; ?>
