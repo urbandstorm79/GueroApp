@@ -16,7 +16,15 @@ if (isset($_SESSION['user-id'])){
 		$stmt->bindParam(':apellido', $_POST['lastName']);
 		$stmt->bindParam(':correo', $_POST['mail']);
 		$stmt->bindParam(':userN', $_POST['user']);
-		$stmt->bindParam(':pass', $_POST['pass']);
+		if ($_POST['pass']==$usr['contra']){
+			$stmt->bindParam(':pass', $_POST['pass']);
+		}else{
+			$password= password_hash($_POST['pass'], PASSWORD_BCRYPT);
+//			$_POST['pass']
+			$stmt->bindParam(':pass', $password);
+			echo 'no se parecen';
+		}
+
 		$stmt->bindParam(':tel', $_POST['tel']);
 		$stmt->bindParam(':id', $_SESSION['user-id']);
 		if ($stmt->execute()){

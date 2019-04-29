@@ -43,20 +43,26 @@ if (isset($_POST['btnAction'])){
 			}else{
 				$idOrden= array_column($_SESSION['carrito'],'idC');
 				if (in_array($id,$idOrden)){
-					echo '<script>alert("Producto ya seleccionado")</script>';
-//					$nuevaCantidad=0;
-//					foreach ($_SESSION['carrito'] as $index=> $itemC){
-//
-//						echo 'item '.$itemC['cantidadP'];
-//						$nuevaCantidad=$itemC['cantidadP']+$_POST['cantidadP'];
-//					}
-//					$orden= array(
-//						'idC'=>$id,
-//						'cantidadP'=>$nuevaCantidad,
-//						'nombre'=>$nombre,
-//						'precio'=>$precio
-//					);
-//					$_SESSION['carrito'][$numOrden]=$orden;
+//					echo '<script>alert("Producto ya seleccionado")</script>';
+					$nuevaCantidad=0;
+					foreach ($_SESSION['carrito'] as $index=> $itemC){
+						if ($itemC['idC']==$_POST['idC']){
+							$nuevaCantidad=$itemC['cantidadP']+$_POST['cantidadP'];
+							$orden= array(
+								'idC'=>$_POST['idC'],
+								'cantidadP'=>$nuevaCantidad,
+								'nombre'=>$_POST['nombre'],
+								'precio'=>$_POST['precio']
+							);
+							$_SESSION['carrito'][$index]=$orden;
+							$msj="Orden Agregada";
+
+						}
+
+
+					}
+
+
 					$msj= "";
 				}else{
 					$numOrden= count($_SESSION['carrito']);

@@ -32,7 +32,7 @@ require 'controller/carritoController.php';
             <h2 class="text-center">Tus pedidos</h2>
             <a href="menu.php" class="btn btn-info">Volver al menu</a>
             <?php if (!empty($_SESSION['carrito'])){?>
-			<table class="table table-bordered text-center">
+			<table class="table-responsive-lg table-bordered text-center">
 				<thead class="thead-light">
 				<tr>
 					<th>Descripcion</th>
@@ -47,7 +47,7 @@ require 'controller/carritoController.php';
                 $total=0;
                 foreach ($_SESSION['carrito'] as $index=>$item):?>
 				<tr>
-					<td scope="row"><?=$index.' '.$item['nombre']?></td>
+					<td scope="row"><?=$item['nombre']?></td>
 					<td><?=$item['cantidadP']?></td>
 					<td>$<?=$item['precio']?></td>
 					<td><?=number_format($item['precio']*$item['cantidadP'],2)?></td>

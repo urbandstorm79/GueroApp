@@ -15,7 +15,8 @@ if (isset($_SESSION['user-id'])){
 		$state->bindParam(':lastN',$_POST['lastName']);
 		$state->bindParam(':email', $_POST['mail']);
 		$state->bindParam(':usuario',$_POST['userName']);
-		$state->bindParam(':pass',$_POST['password']);
+		$password= password_hash($_POST['password'], PASSWORD_BCRYPT);
+		$state->bindParam(':pass',$password);
 		$state->bindParam(':datee',$_POST['date']);
 		$state->bindParam(':tel',$_POST['tel']);
 
