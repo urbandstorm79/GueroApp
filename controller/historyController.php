@@ -1,68 +1,66 @@
 <?php
 require 'connection.php';
 //require 'sessionUser.php';
-$state = $conn->prepare("SELECT * FROM pedidos WHERE idpedidos = :id");
-$state->bindParam(':id', $_SESSION['user-id']);
+$state = $conn->prepare("SELECT * FROM pedidos WHERE Usuarios_usuario = :idUsuario");
+$state->bindParam(':idUsuario', $_SESSION['user-id']);
 $state->execute();
 $rows= $state->rowCount();
 $total=0;
+$resultPedido= $state->fetchAll();
 // echo $rows;
-if($rows>0){
-    ?>
-    <table class="table text-center">
-        <thead>
-            <th class="">Pedido</th>
-            <th>Cantidad</th>
-            <th class="">Precio</th>
-            <th class="">Fecha</th>
-        </thead>
-        <tbody>
-    
-    <?php
-    while ($result= $state->fetch()){
-    ?>
+if ($rows>0){
+	foreach ($resultPedido as $pedidos){
+	    ?>
+        <div class="col-lg-12">
+            <div class="card mb-2">
+                <div class="bg-light p-2 text-muted border-bottom">
+                    <span class="border-right p-2">Fecha <?php $fechaP=new DateTime($pedidos['fecha']); echo $fechaP->format('d-M-Y')?></span> <span>Total: $<?=number_format($pedidos['total'],2)?></span>
+                </div>
+                <div class="card-body">
+                <h4 class="card-title">Pedido numero: <?=$pedidos['idpedidos']?></h4>
+				<div class="row">
+					<?php
+					$state=$conn->prepare("SELECT * FROM detalleventa WHERE pedidos_idpedidos=:idPedido");
+					$state->bindParam(':idPedido',$pedidos['idpedidos']);
+					$state->execute();
+					while($detail=$state->fetch(PDO::FETCH_ASSOC  )){
 
-        <tr class="">
-            <?php
-            $stateFood=$conn->prepare('SELECT nombre_comidas, precio_comidas FROM comidas where idcomidas=:idf');
-            $stateFood->bindParam(':idf', $result['comidas_idcomidas']);
-            $stateFood->execute();
-            while ($rsF=$stateFood->fetch(PDO::FETCH_ASSOC)):
-                $total+=$rsF['precio_comidas'];
-            ?>
-        <td><?=$rsF['nombre_comidas']?></td>
-            <td>1</td>
-                <td>$<?=$rsF['precio_comidas'] ?></td>
-            <td><?=$result['fecha']?></td>
+						?>
+						<?php
+						$menu = $conn->prepare('SELECT nombrePlatillo,imagen FROM menu WHERE idmenu= :IDmenu');
+						$menu->bindParam(':IDmenu', $detail['menu_idmenu']);
+						$menu->execute();
+						while ($rsm=$menu->fetch(PDO::FETCH_ASSOC)){
+							?>
+                            <div class="col-md-6  p-2">
+                                <img class=" img-thumbnail" src="<?=$rsm['imagen']?>" alt="<?=$rsm['nombrePlatillo']?>" width="200px">
 
-          <?php endwhile;  ?>
+                            </div>
+                            <div class="col-md-6 border-top p-2">
+                            <h5 class="card-text"><?=$rsm['nombrePlatillo']?></h5>
 
-        </tr>
-        <tr class="">
-			<?php
-			$stateDrink=$conn->prepare('SELECT nombre_bebidas, precio_bebidas FROM bebidas WHERE idbebidas=:idd');
-			$stateDrink->bindParam(':idd', $result['bebidas_idbebidas']);
-			$stateDrink->execute();
-			while ($rsD=$stateDrink->fetch(PDO::FETCH_ASSOC)):
-                $total+=$rsD['precio_bebidas'];
-				?>
-                <td><?=$rsD['nombre_bebidas']?></td>
-            <td>1</td>
-                <td>$<?=$rsD['precio_bebidas']?></td>
-                <td><?=$result['fecha']?></td>
-			<?php endwhile;?>
 
-        </tr>
-        <tr class=""><th colspan="2">Total</th>
-            <td colspan="">$<?php echo $total?></td>
-            <td></td>
-        </tr>
-        </tbody>
-        </table>
-        
-    <?php
-    }
+							<?php
+						}
+
+						?>
+                        <p class="card-text"><span><strong>Precio unitario:</strong> $<?=number_format($detail['precioUnitario'],2)?></span><span> <strong>Cantidad:  </strong><?=$detail['cantidad']?></span></p>
+                        </div>
+
+
+						<?php
+					}
+					?>
+                </div>
+                </div>
+            </div>
+        </div>
+
+<?php
+	}
+
 }else{
-    echo '<h3 class="text-center mt-5">No hay pedidos</h3>  ';
+    echo '<h2>No ha pedidos</h2>';
 }
+
 

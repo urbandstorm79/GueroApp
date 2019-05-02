@@ -39,6 +39,7 @@ if (isset($_POST['btnAction'])){
 					'precio'=>$precio
 				);
 				$_SESSION['carrito'][0]=$orden;
+
 				$msj='Orden agregada';
 			}else{
 				$idOrden= array_column($_SESSION['carrito'],'idC');

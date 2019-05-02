@@ -10,11 +10,14 @@
 </head>
 <body>
 <?php require 'layouts/menu-nav.php'?>
-<div class="container">
+<div class="container" style="margin-top: 50px">
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-            <?php require'controller/historyController.php';?>
+            <h2>Mis pedidos</h2>
+            <div class="row">
+				<?php require'controller/historyController.php';?>
+            </div>
         </div>
         <div class="col-lg-2"></div>
     </div>

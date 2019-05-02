@@ -8,35 +8,48 @@ if (isset($_SESSION['user-id'])){
 }else{
 	$mensaje ="";
 
-	if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userName']) && !empty($_POST['password']) && !empty($_POST['mail']) && !empty($_POST['date'])){
-		$query = "INSERT INTO usuarios (nombre, apellido, correo, nombreUsuario, contra, fecha, telefono) VALUES (:nombre,:lastN,:email, :usuario, :pass, :datee, :tel)";
-		$state = $conn->prepare($query);
-		$state->bindParam(':nombre', $_POST['name']);
-		$state->bindParam(':lastN',$_POST['lastName']);
-		$state->bindParam(':email', $_POST['mail']);
-		$state->bindParam(':usuario',$_POST['userName']);
-		$password= password_hash($_POST['password'], PASSWORD_BCRYPT);
-		$state->bindParam(':pass',$password);
-		$state->bindParam(':datee',$_POST['date']);
-		$state->bindParam(':tel',$_POST['tel']);
 
-		if ($state->execute()){
-			$titulo= 'Usuario Creado';
-			$mensaje= 'Ya puedes iniciar sesion';
-			header('Location: login.php');
-			// echo $mensaje;
-		}else{
-			$titulo= 'Error';
-			$mensaje= 'Ocurrio algo inesperado';
-			//echo $mensaje;
-		}
+	if (!empty($_POST['name']) && !empty($_POST['lastName']) && !empty($_POST['userName']) && !empty($_POST['password']) && !empty($_POST['mail']) && !empty($_POST['date'])){
+		$fecha = new DateTime($_POST['date']);
+		$year = $fecha->format('Y');
+		$hoy= getdate();
+		$edad= $hoy['year']-$year;
+		if ($edad<=2){
+		    $icon= ' <i class="far fa-laugh"></i>';
+		    $mensaje='Buen intento!! Pero debes ingresar una edad válida'.$icon;
+        }else{
+			if ($edad>13){
+				$query = "INSERT INTO usuarios (nombre, apellido, correo, nombreUsuario, contra, fecha, telefono) VALUES (:nombre,:lastN,:email, :usuario, :pass, :datee, :tel)";
+				$state = $conn->prepare($query);
+				$state->bindParam(':nombre', $_POST['name']);
+				$state->bindParam(':lastN',$_POST['lastName']);
+				$state->bindParam(':email', $_POST['mail']);
+				$state->bindParam(':usuario',$_POST['userName']);
+				$password= password_hash($_POST['password'], PASSWORD_BCRYPT);
+				$state->bindParam(':pass',$password);
+				$state->bindParam(':datee',$_POST['date']);
+				$state->bindParam(':tel',$_POST['tel']);
+
+				if ($state->execute()){
+					$titulo= 'Usuario Creado';
+					$mensaje= 'Ya puedes iniciar sesion';
+					header('Location: login.php');
+					// echo $mensaje;
+				}else{
+					$titulo= 'Error';
+					$mensaje= 'Ocurrio algo inesperado';
+					//echo $mensaje;
+				}
+			}else{
+				$mensaje= 'Debes tener almenos 13 años para crear una cuenta';
+			}
+        }
+
 
 	}else{
 		//echo 'Vacio';
 	}
 }
-
-
 ?>
 
 <!doctype html>
@@ -58,18 +71,21 @@ if (isset($_SESSION['user-id'])){
 	</div>
 </nav>
 
-<?php if (!empty($mensaje)){
-    echo '<h3 class="alert-info">'.$mensaje.'</h3>';
-}?>
+
 
 <div class="container">
     <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6 ">
-            <div class="card shadow-sm p-2 bg-light" style="margin: 100px auto;;">
+			<?php if (!empty($mensaje)){
+				echo '<div class="alert alert-warning mt-5 text-center" role="alert">
+    	<strong>'.$mensaje.'</strong>
+    </div>';
+			}?>
+            <div class="card shadow-sm p-2 bg-light" style="margin: 50px auto;;">
                 <h2>Crea una cuenta</h2>
 
-                <form action="signUp.php" method="POST" class="">
+                <form action="signUp.php" method="post" class="">
                     <div class="">
                         <div class="row">
                             <div class="form-group col-lg-6">
@@ -77,7 +93,7 @@ if (isset($_SESSION['user-id'])){
                                     <div class="input-group-prepend"><span class="input-group-text"><i
                                                     class="fas fa-address-card"></i></span></div>
                                     <label for="name" class="sr-only">Nombre</label>
-                                    <input type="text" name="name" placeholder="Nombre" class="form-control" >
+                                    <input type="text" name="name" placeholder="Nombre" class="form-control" required>
                                 </div>
 
                             </div>
@@ -86,7 +102,7 @@ if (isset($_SESSION['user-id'])){
                                     <div class="input-group-prepend"><span class="input-group-text"><i
                                                     class="fas fa-address-card"></i></span></div>
                                     <label class="sr-only">Apellido</label>
-                                    <input class="form-control" type="text" name="lastName" placeholder="Apellido" >
+                                    <input class="form-control" type="text" name="lastName" placeholder="Apellido" required >
                                 </div>
                         </div>
                         </div>
@@ -95,7 +111,7 @@ if (isset($_SESSION['user-id'])){
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text"><i
                                                     class="fas fa-at"></i></span></div>
-                                    <input class="form-control" type="email" name="mail" placeholder="Correo eléctronico"> <!-- falta agregar -->
+                                    <input class="form-control" type="email" name="mail" placeholder="Correo eléctronico" required> <!-- falta agregar -->
                                     <label class="sr-only" for="mail">Correo eléctronico</label>
                                 </div>
                         </div>
@@ -108,7 +124,7 @@ if (isset($_SESSION['user-id'])){
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
                                     <label class="sr-only">Nombre de usuario</label>
-                                    <input class="form-control" type="text" name="userName" placeholder="Nombre de usuario" >
+                                    <input class="form-control" type="text" name="userName" placeholder="Nombre de usuario" required>
                                 </div>
 
                             </div>
@@ -118,7 +134,7 @@ if (isset($_SESSION['user-id'])){
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
                                     <label class="sr-only">Contraseña</label>
-                                    <input class="form-control" type="password" name="password" placeholder="Contraseña">
+                                    <input class="form-control" type="password" name="password" placeholder="Contraseña" required>
                                 </div>
                         </div>
 
@@ -140,7 +156,7 @@ if (isset($_SESSION['user-id'])){
                                         <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                     </div>
                                     <label class="sr-only" for="date">Fecha de nacimiento</label>
-                                    <input class="form-control" type="date" name="date" placeholder="Fecha de nacimiento">
+                                    <input class="form-control" type="date" name="date" placeholder="Fecha de nacimiento" required>
                                 </div>
                             </div>
                         </div>

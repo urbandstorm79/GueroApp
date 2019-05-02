@@ -64,7 +64,16 @@ require 'layouts/menu-nav.php';
                             <h2 class="text-center">Bebidas</h2>
                             <div class="card-deck">
                                 <?php require 'controller/bebidaController.php'?>
-                                <?php require 'controller/bebidaAController.php'?>
+                                <?php
+                                $usrFecha=new DateTime($user['fecha']);
+                                $usrY= $usrFecha->format('Y');
+                                $hoy= getdate();
+                                $edad= $hoy['year']-$usrY;
+								if ($edad>=18){
+
+									require 'controller/bebidaAController.php';
+                                }
+                                ?>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-postre" role="tabpanel" aria-labelledby="pills-postre-tab">

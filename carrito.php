@@ -30,9 +30,10 @@ require 'controller/carritoController.php';
 	<div class="row">
 		<div class="col-lg-12">
             <h2 class="text-center">Tus pedidos</h2>
-            <a href="menu.php" class="btn btn-info">Volver al menu</a>
-            <?php if (!empty($_SESSION['carrito'])){?>
-			<table class="table-responsive-lg table-bordered text-center">
+            <a href="menu.php" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Volver al menu"><i class="fas fa-arrow-left"></i></a>
+            <?php if (!empty($_SESSION['carrito'])){
+                ?>
+			<table class="table table-responsive-lg table-bordered text-center">
 				<thead class="thead-light">
 				<tr>
 					<th>Descripcion</th>
@@ -68,7 +69,9 @@ require 'controller/carritoController.php';
                 </tr>
                 <tr>
                     <td colspan="5">
-                        <button class="btn btn-primary btn-lg">Hacer pedido</button>
+                        <form action="payment.php" method="post">
+                            <button class="btn btn-primary btn-lg" type="submit">Hacer pedido</button>
+                        </form>
                     </td>
                 </tr>
 				</tbody>

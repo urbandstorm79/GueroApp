@@ -11,7 +11,7 @@ require 'connection.php';
 if (isset($_SESSION['user-id'])){
 
 
-	$records = $conn->prepare('SELECT nombreUsuario FROM usuarios WHERE idUsuarios = :id');
+	$records = $conn->prepare('SELECT nombreUsuario,fecha FROM usuarios WHERE idUsuarios = :id');
 	$records->bindParam(':id',$_SESSION['user-id']);
 	$records->execute();
 	$results = $records->fetch(PDO::FETCH_ASSOC);
