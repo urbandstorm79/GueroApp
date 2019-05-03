@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-            <h2>Mis pedidos</h2>
+            <h2 class="border-bottom">Mis pedidos</h2>
             <div class="row">
 				<?php require'controller/historyController.php';?>
             </div>

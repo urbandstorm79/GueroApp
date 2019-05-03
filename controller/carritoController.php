@@ -100,5 +100,9 @@ if (isset($_POST['btnAction'])){
 				$msj="Numero incorrecto ";
 			}
 			break;
+		case 'Terminar':
+			unset($_SESSION['carrito']);
+			header("Location:../../GueroApp/dashboard.php");
+			break;
 	}
 }

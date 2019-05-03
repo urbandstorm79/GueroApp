@@ -27,7 +27,7 @@ require 'controller/carritoController.php';
 		<div class="col-md-12">
 			<div class="alert alert-warning" role="alert">
 				<strong>Su pedido estara listo en unos minutos!!</strong>
-				<p>Una vez terminado el proceso, debera presentar su ticktet y pasar a caja para recibir su pedido</p>
+				<p>Hemos recibido su pedido, ya puede pasar a caja a pagar, por favor espere a que le llamemos</p>
 			</div>
 		</div>
 	</div>
@@ -83,7 +83,9 @@ require 'controller/carritoController.php';
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="">
-                                    <button class="btn btn-outline-warning btn-lg btn-block">Finalizar pedido</button>
+                                    <form action="" method="post">
+                                        <button class="btn btn-outline-warning btn-lg btn-block" name="btnAction" value="Terminar">Terminar</button>
+                                    </form>
                                 </div>
                             </div>
                             <div class="col-md-4"></div>

@@ -14,7 +14,7 @@ if (!empty($_POST['user']) && !empty($_POST['password'])){
     $mensaje= '';
     if ($_POST['user']== $result['nombreUsuario'] || $_POST['user']== $result['correo']){
 
-        if ( password_verify($_POST['password'], $result['contra'])){
+        if (password_verify($_POST['password'], $result['contra'])){
 			$_SESSION['user-id'] = $result['idUsuarios'];
 			echo 'Todo va relativamente bien';
 			header('Location: dashboard.php');
