@@ -1120,20 +1120,25 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="281" parent="256" name="pedidos_idpedidos">
+    <column id="281" parent="256" name="comentario">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="282" parent="256" name="pedidos_idpedidos">
       <ColNames>pedidos_idpedidos</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="282" parent="256" name="menu_idmenu">
+    <index id="283" parent="256" name="menu_idmenu">
       <ColNames>menu_idmenu</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="283" parent="256" name="PRIMARY">
+    <key id="284" parent="256" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idDetalle</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="284" parent="256" name="pedidos">
+    <foreign-key id="285" parent="256" name="pedidos">
       <ColNames>pedidos_idpedidos</ColNames>
       <RefSchemaName>gueroapp</RefSchemaName>
       <RefTableName>pedidos</RefTableName>
@@ -1141,7 +1146,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="285" parent="256" name="menu">
+    <foreign-key id="286" parent="256" name="menu">
       <ColNames>menu_idmenu</ColNames>
       <RefSchemaName>gueroapp</RefSchemaName>
       <RefTableName>menu</RefTableName>
@@ -1149,89 +1154,89 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="286" parent="257" name="idmenu">
+    <column id="287" parent="257" name="idmenu">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="257" name="nombrePlatillo">
+    <column id="288" parent="257" name="nombrePlatillo">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="257" name="tipo">
+    <column id="289" parent="257" name="tipo">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="257" name="precio">
+    <column id="290" parent="257" name="precio">
       <Position>4</Position>
       <DataType>decimal(20,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="257" name="imagen">
+    <column id="291" parent="257" name="imagen">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="291" parent="257" name="PRIMARY">
+    <key id="292" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idmenu</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="292" parent="258" name="idpedidos">
+    <column id="293" parent="258" name="idpedidos">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="258" name="claveTransaccion">
+    <column id="294" parent="258" name="claveTransaccion">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="258" name="fecha">
+    <column id="295" parent="258" name="fecha">
       <Position>3</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="258" name="total">
+    <column id="296" parent="258" name="total">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="258" name="status">
+    <column id="297" parent="258" name="status">
       <Position>5</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="258" name="Usuarios_usuario">
+    <column id="298" parent="258" name="Usuarios_usuario">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="298" parent="258" name="idUsuario">
+    <index id="299" parent="258" name="idUsuario">
       <ColNames>Usuarios_usuario</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="299" parent="258" name="PRIMARY">
+    <key id="300" parent="258" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idpedidos</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="300" parent="258" name="pedidos_ibfk_1">
+    <foreign-key id="301" parent="258" name="pedidos_ibfk_1">
       <ColNames>Usuarios_usuario</ColNames>
       <RefSchemaName>gueroapp</RefSchemaName>
       <RefTableName>usuarios</RefTableName>
@@ -1239,80 +1244,80 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="301" parent="259" name="idpostres">
+    <column id="302" parent="259" name="idpostres">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="259" name="nombre_postres">
+    <column id="303" parent="259" name="nombre_postres">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="259" name="precio_postres">
+    <column id="304" parent="259" name="precio_postres">
       <Position>3</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="304" parent="259" name="img_postres">
+    <column id="305" parent="259" name="img_postres">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="305" parent="259" name="PRIMARY">
+    <key id="306" parent="259" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idpostres</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="306" parent="260" name="idUsuarios">
+    <column id="307" parent="260" name="idUsuarios">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="307" parent="260" name="nombre">
+    <column id="308" parent="260" name="nombre">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="260" name="apellido">
+    <column id="309" parent="260" name="apellido">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="260" name="correo">
+    <column id="310" parent="260" name="correo">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="310" parent="260" name="nombreUsuario">
+    <column id="311" parent="260" name="nombreUsuario">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="260" name="contra">
+    <column id="312" parent="260" name="contra">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="260" name="fecha">
+    <column id="313" parent="260" name="fecha">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="260" name="telefono">
+    <column id="314" parent="260" name="telefono">
       <Position>8</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="314" parent="260" name="PRIMARY">
+    <key id="315" parent="260" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idUsuarios</ColNames>
       <Primary>1</Primary>

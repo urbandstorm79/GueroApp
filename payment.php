@@ -84,7 +84,7 @@ require 'controller/carritoController.php';
                             <div class="col-md-4">
                                 <div class="">
                                     <form action="" method="post">
-                                        <button class="btn btn-outline-warning btn-lg btn-block" name="btnAction" value="Terminar">Terminar</button>
+                                        <button class="btn btn-outline-warning btn-lg btn-block" name="btnAction" value="Terminar">Volver a menu</button>
                                     </form>
                                 </div>
                             </div>
@@ -97,30 +97,33 @@ require 'controller/carritoController.php';
 
 		</div>
 	</div>
-	<?php endif;?>
+	<?php endif;
+	?>
 </div>
 
 <?php
-//$session = session_id();
-//$stmnt = $conn->prepare("INSERT INTO pedidos (CLAVETRANSACCION, FECHA, TOTAL, STATUS, USUARIOS_USUARIO) VALUES
-//(:keyS,NOW(),:total,'pendiente',:userId)");
-//$stmnt->bindParam('keyS',$session);
-//$stmnt->bindParam(':total',$total);
-//$stmnt->bindParam(':userId',$_SESSION['user-id']);
-//$stmnt->execute();
-//$idPedido=$conn->lastInsertId();
-//
-//foreach ($_SESSION['carrito'] as $index=>$items){
-//    $stmnt = $conn->prepare("INSERT INTO detalleventa (pedidos_idpedidos, menu_idmenu, precioUnitario, cantidad)
-//VALUES (:idPedido,:idmenu,:precioU,:cantidad)");
-//    $stmnt->bindParam(':idPedido',$idPedido);
-//    $stmnt->bindParam(':idmenu',$items['idC']);
-//    $stmnt->bindParam(':precioU',$items['precio']);
-//    $stmnt->bindParam(':cantidad',$items['cantidadP']);
-//    $stmnt->execute();
-//}
+$session = session_id();
+$stmnt = $conn->prepare("INSERT INTO pedidos (CLAVETRANSACCION, FECHA, TOTAL, STATUS, USUARIOS_USUARIO) VALUES
+(:keyS,NOW(),:total,'pendiente',:userId)");
+$stmnt->bindParam('keyS',$session);
+$stmnt->bindParam(':total',$total);
+$stmnt->bindParam(':userId',$_SESSION['user-id']);
+$stmnt->execute();
+$idPedido=$conn->lastInsertId();
+
+foreach ($_SESSION['carrito'] as $index=>$items){
+    $stmnt = $conn->prepare("INSERT INTO detalleventa (pedidos_idpedidos, menu_idmenu, precioUnitario, cantidad,comentario)
+VALUES (:idPedido,:idmenu,:precioU,:cantidad,:coment)");
+    $stmnt->bindParam(':idPedido',$idPedido);
+    $stmnt->bindParam(':idmenu',$items['idC']);
+    $stmnt->bindParam(':precioU',$items['precio']);
+    $stmnt->bindParam(':cantidad',$items['cantidadP']);
+    $stmnt->bindParam(':coment',$items['comentario']);
+    $stmnt->execute();
+}
 
 ?>
+
 
 </body>
 </html>

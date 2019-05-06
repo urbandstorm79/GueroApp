@@ -34,15 +34,14 @@ foreach ($resultado as $items): ?>
                             <input type="number" value="1" max="10"min="1" name="cantidadP" class="form-control">
                         </div>
                     </div>
+                    <label for="comentario">Comentario</label>
+                    <input type="text" class="form-control" placeholder="Agregue un comentario acerca de su orden" name="comment" required>
                     <input type="hidden" value="<?=$items['idmenu']?>" name="idC">
                     <input type="hidden" value="<?=$items['nombrePlatillo']?>" name="nombre">
                     <input type="hidden" value="<?=$items['precio']?>" name="precio">
 
-                    <div class="btn-group">
-                        <button class="btn btn-info"><i class="fas fa-plus"></i></button>
-                        <button class="btn btn-info" type="submit" name="btnAction" value="Agregar"> Agregar pedido</button>
+                    <button class="btn btn-info" type="submit" name="btnAction" value="Agregar"><i class="fas fa-plus"></i> Agregar pedido</button>
 
-                    </div>
                 </form>
             </div>
         </div>

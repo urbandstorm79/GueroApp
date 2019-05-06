@@ -23,10 +23,8 @@ foreach ($resultado as $item): ?>
                     <input type="hidden" value="<?=$item['idmenu']?>" name="idC">
                     <input type="hidden" value="<?=$item['nombrePlatillo']?>" name="nombre">
                     <input type="hidden" value="<?=$item['precio']?>" name="precio">
-                    <div class="btn-group">
-                        <button class="btn btn-info"><i class="fas fa-plus"></i></button>
-                        <button class="btn btn-info" type="submit" name="btnAction" value="Agregar"> Agregar a pedido</button>
-                    </div>
+                    <button class="btn btn-info" type="submit" name="btnAction" value="Agregar"><i class="fas fa-plus"></i> Agregar a pedido</button>
+
                 </form>
 			</div>
 		</div>

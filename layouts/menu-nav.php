@@ -16,7 +16,10 @@
                 <?php require 'side-nav.php';?>
             </div>
         </div>
-        <a  href="../../GueroApp/dashboard.php" class="navbar-brand"><h2>GüeroApp</h2></a>
+
+        <a  href="../../GueroApp/dashboard.php" class="navbar-brand">
+            GüeroApp
+        </a>
     </div>
 
 	</div>

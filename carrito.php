@@ -36,8 +36,9 @@ require 'controller/carritoController.php';
 			<table class="table table-responsive-lg table-bordered text-center">
 				<thead class="thead-light">
 				<tr>
+                    <th>Cantidad</th>
 					<th>Descripcion</th>
-					<th>Cantidad</th>
+                    <th>Comentario</th>
 					<th>Precio</th>
 					<th>Total</th>
 					<th>--</th>
@@ -48,14 +49,15 @@ require 'controller/carritoController.php';
                 $total=0;
                 foreach ($_SESSION['carrito'] as $index=>$item):?>
 				<tr>
+                    <td><?=$item['cantidadP']?></td>
 					<td scope="row"><?=$item['nombre']?></td>
-					<td><?=$item['cantidadP']?></td>
+                    <td><?=$item['comentario']?></td>
 					<td>$<?=$item['precio']?></td>
 					<td><?=number_format($item['precio']*$item['cantidadP'],2)?></td>
 					<td>
                         <form action="" method="post">
                             <input type="hidden" value="<?=$item['idC']?>" name="id">
-                            <button type="submit" class="btn btn-warning" name="btnAction" value="Borrar" >Cancelar</button>
+                            <button type="submit" class="btn btn-warning" name="btnAction" value="Borrar" >Eliminar</button>
                         </form>
                     </td>
 
@@ -63,12 +65,12 @@ require 'controller/carritoController.php';
 					<?php $total= $total+($item['precio']*$item['cantidadP'])?>
 				<?php endforeach; ?>
                 <tr>
-                    <td colspan="3"><h4>Total</h4></td>
+                    <td colspan="4"><h4>Total</h4></td>
                     <td><h5>$<?=number_format($total,2)?></h5></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td colspan="5">
+                    <td colspan="6">
                         <form action="payment.php" method="post">
                             <button class="btn btn-primary btn-lg" type="submit">Hacer pedido</button>
                         </form>

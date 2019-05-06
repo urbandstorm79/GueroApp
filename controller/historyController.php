@@ -1,11 +1,11 @@
 <?php
 require 'connection.php';
 //require 'sessionUser.php';
-$state = $conn->prepare("SELECT * FROM pedidos WHERE Usuarios_usuario = :idUsuario");
+$state = $conn->prepare("SELECT * FROM pedidos WHERE Usuarios_usuario = :idUsuario ORDER BY fecha DESC");
 $state->bindParam(':idUsuario', $_SESSION['user-id']);
 $state->execute();
 $rows= $state->rowCount();
-$total=0;
+//$total=0;
 $resultPedido= $state->fetchAll();
 // echo $rows;
 if ($rows>0){
@@ -14,7 +14,7 @@ if ($rows>0){
         <div class="col-lg-12">
             <div class="card mb-2">
                 <div class="bg-light p-2 text-muted border-bottom">
-                    <span class="border-right p-2">Fecha <?php $fechaP=new DateTime($pedidos['fecha']); echo $fechaP->format('d-M-Y')?></span> <span>Total: $<?=number_format($pedidos['total'],2)?></span>
+                    <span class="border-right p-2">Fecha: <?php $fechaP=new DateTime($pedidos['fecha']); echo $fechaP->format('d-M-Y')?></span> <span>Total: $<?=number_format($pedidos['total'],2)?></span>
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Pedido numero: <?=$pedidos['idpedidos']?></h4>
@@ -23,7 +23,7 @@ if ($rows>0){
 						$state=$conn->prepare("SELECT * FROM detalleventa WHERE pedidos_idpedidos=:idPedido");
 						$state->bindParam(':idPedido',$pedidos['idpedidos']);
 						$state->execute();
-						while($detail=$state->fetch(PDO::FETCH_ASSOC  )){
+						while($detail=$state->fetch(PDO::FETCH_ASSOC)){
 
 							?>
 							<?php
@@ -61,15 +61,10 @@ if ($rows>0){
 
 }else{
 	?>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4 text-center">
-                <h4 class="">No tienes pedidos</h4>
-                <a href="../../GueroApp/menu.php" class="btn btn-outline-warning m-auto btn-lg ">Ir a menu</a>
-            </div>
-            <div class="col-lg-4"></div>
-        </div>
+    <div class="col-lg-12 text-center">
+        <h4 class="">No tienes pedidos</h4>
+        <img class="img-fluid d-block m-auto p-2" src="../../GueroApp/img/waiter.png" alt="Mesero" width="128px">
+        <a href="../../GueroApp/menu.php" class="btn btn-outline-warning m-auto btn-lg ">Ir a menu</a>
     </div>
 <?php
 }

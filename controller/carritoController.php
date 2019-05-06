@@ -31,12 +31,18 @@ if (isset($_POST['btnAction'])){
 			}else{
 				$msj="Precio equivocado ";
 			}
+			if (is_string($_POST['comment'])){
+				$comentario= $_POST['comment'];
+			}else{
+				$msj ="Solo texto";
+			}
 			if (!isset($_SESSION['carrito'])){
 				$orden= array(
 					'idC'=>$id,
 					'cantidadP'=>$cantidad,
 					'nombre'=>$nombre,
-					'precio'=>$precio
+					'precio'=>$precio,
+					'comentario'=>$comentario
 				);
 				$_SESSION['carrito'][0]=$orden;
 
@@ -53,7 +59,8 @@ if (isset($_POST['btnAction'])){
 								'idC'=>$_POST['idC'],
 								'cantidadP'=>$nuevaCantidad,
 								'nombre'=>$_POST['nombre'],
-								'precio'=>$_POST['precio']
+								'precio'=>$_POST['precio'],
+								'comentario'=>$_POST['comment']
 							);
 							$_SESSION['carrito'][$index]=$orden;
 							$msj="Orden Agregada";
@@ -72,7 +79,8 @@ if (isset($_POST['btnAction'])){
 						'idC'=>$id,
 						'cantidadP'=>$cantidad,
 						'nombre'=>$nombre,
-						'precio'=>$precio
+						'precio'=>$precio,
+						'comentario'=>$comentario
 					);
 
 					$_SESSION['carrito'][$numOrden]=$orden;
@@ -87,7 +95,7 @@ if (isset($_POST['btnAction'])){
 				foreach ($_SESSION['carrito'] as $index=>$value){
 
 					if ($value['idC']==$id){
-						echo $index;
+//						echo $index;
 						unset($_SESSION['carrito'][$index]);
 						sort($_SESSION['carrito']);
 
