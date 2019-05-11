@@ -6,20 +6,19 @@ $resultado = $menu->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($resultado as $item): ?>
 	<div class="col-md-4 mb-4">
-		<div class="card bg-light" >
+		<div class="card bg-light h-100" >
 			<img src="<?=$item['imagen']?>" alt="<?=$item['nombrePlatillo']?>" title="<?=$item['nombrePlatillo']?>" class="card-img-top">
 			<div class="card-body">
 				<h4 class="card-title"><?=$item['nombrePlatillo']?></h4>
 				<p class="card-text">$<?=number_format($item['precio'],2)?></p>
                 <form action="" method="post">
-                    <div class="row">
-                        <div class="col-md-2 p-2">
-                            <label for="">Cantidad: </label>
-                        </div>
-                        <div class="col-md-3">
-                            <input type="number" value="1" max="10"min="1" name="cantidadP" class="form-control">
-                        </div>
+                    
+                     <div class=" d-flex align-items-center justify-content-around">   
+                    <label for="" class="pr-2">Cantidad: </label>
+                    <input type="number" value="1" max="10"min="1" name="cantidadP" class="form-control">
                     </div>
+                    <label for="comentario">Comentario:</label>
+                    <input type="text" class="form-control" placeholder="Agregue un comentario acerca de su orden" name="comment" required>
                     <input type="hidden" value="<?=$item['idmenu']?>" name="idC">
                     <input type="hidden" value="<?=$item['nombrePlatillo']?>" name="nombre">
                     <input type="hidden" value="<?=$item['precio']?>" name="precio">
