@@ -77,7 +77,7 @@ require 'layouts/menu-nav.php';
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-postre" role="tabpanel" aria-labelledby="pills-postre-tab">
-                            <h2>Postres</h2>
+                            <h2 class="text-center">Postres</h2>
                             <div class="card-deck">
                                 <?php require 'controller/postreController.php'?>
                             </div>

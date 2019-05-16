@@ -52,15 +52,17 @@ if (isset($_POST['btnAction'])){
 				if (in_array($id,$idOrden)){
 //					echo '<script>alert("Producto ya seleccionado")</script>';
 					$nuevaCantidad=0;
+					$nuevoComentario="";
 					foreach ($_SESSION['carrito'] as $index=> $itemC){
 						if ($itemC['idC']==$_POST['idC']){
 							$nuevaCantidad=$itemC['cantidadP']+$_POST['cantidadP'];
+							$nuevoComentario=$itemC['comentario']."<br/>".$_POST['comment'];
 							$orden= array(
 								'idC'=>$_POST['idC'],
 								'cantidadP'=>$nuevaCantidad,
 								'nombre'=>$_POST['nombre'],
 								'precio'=>$_POST['precio'],
-								'comentario'=>$_POST['comment']
+								'comentario'=>$nuevoComentario
 							);
 							$_SESSION['carrito'][$index]=$orden;
 							$msj="Orden Agregada";
