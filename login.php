@@ -14,7 +14,7 @@ if (!empty($_POST['user']) && !empty($_POST['password'])){
     $mensaje= '';
     if ($_POST['user']== $result['nombreUsuario'] || $_POST['user']== $result['correo']){
 
-        if (!password_verify($_POST['password'], $result['contra'])){
+        if (password_verify($_POST['password'], $result['contra'])){
 			$_SESSION['user-id'] = $result['idUsuarios'];
 			echo 'Todo va relativamente bien';
 			header('Location: dashboard.php');
@@ -80,6 +80,7 @@ if (!empty($_POST['user']) && !empty($_POST['password'])){
                     </div>
                     <button type="submit" class="btn btn-warning btn-block">LogIn</button>
                     <p>Crea una cuenta dando clic <a href="signUp.php">aquí</a></p>
+                    <p>¿Olvidaste tu contraseña? <a href="changePass.php">Cambiar contraseña</a></p>
 
                     <!-- esta etiqueta es solo temporal, despues la quito, es para evitar el logueo -->
                     <!-- <a href="dashboard.php">ir a dashboard</a> -->

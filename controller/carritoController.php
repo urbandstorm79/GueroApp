@@ -72,7 +72,6 @@ if (isset($_POST['btnAction'])){
 
 					}
 
-
 					$msj= "";
 				}else{
 					$numOrden= count($_SESSION['carrito']);
